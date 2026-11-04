@@ -79,6 +79,7 @@ export default function ContactSection() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [mailtoLink, setMailtoLink] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [openUpwards, setOpenUpwards] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -102,6 +103,37 @@ export default function ContactSection() {
   const selectedCategory = watch("category");
   const selectedOption =
     TOPIC_OPTIONS.find((t) => t.value === selectedCategory) || TOPIC_OPTIONS[0];
+
+  const toggleDropdown = () => {
+    if (!isDropdownOpen && dropdownRef.current) {
+      const rect = dropdownRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      // If less than 360px below and more room above, open upwards to avoid viewport clipping
+      setOpenUpwards(spaceBelow < 360 && rect.top > spaceBelow);
+    }
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      if (!isDropdownOpen) {
+        toggleDropdown();
+        return;
+      }
+      const currentIndex = TOPIC_OPTIONS.findIndex((opt) => opt.value === selectedCategory);
+      const nextIndex =
+        e.key === "ArrowDown"
+          ? (currentIndex + 1) % TOPIC_OPTIONS.length
+          : (currentIndex - 1 + TOPIC_OPTIONS.length) % TOPIC_OPTIONS.length;
+      setValue("category", TOPIC_OPTIONS[nextIndex].value, { shouldValidate: true });
+    } else if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleDropdown();
+    } else if (e.key === "Escape") {
+      setIsDropdownOpen(false);
+    }
+  };
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -309,8 +341,9 @@ export default function ContactSection() {
                     aria-labelledby="topic-label"
                     aria-haspopup="listbox"
                     aria-expanded={isDropdownOpen}
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#33333E] text-left flex items-center justify-between transition-all hover:border-accent-rose focus:border-accent-rose focus:outline-hidden group shadow-2xs"
+                    onClick={toggleDropdown}
+                    onKeyDown={handleKeyDown}
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#33333E] text-left flex items-center justify-between transition-all hover:border-accent-rose focus:border-accent-rose focus:outline-hidden group shadow-2xs cursor-pointer"
                   >
                     <div className="flex items-center gap-3 truncate">
                       <div className="p-1.5 rounded-lg bg-[#FAF4EE] dark:bg-[#2A2A36] text-accent-rose shrink-0">
@@ -339,12 +372,20 @@ export default function ContactSection() {
                   <AnimatePresence>
                     {isDropdownOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: -6, scale: 0.99 }}
+                        initial={{ opacity: 0, y: openUpwards ? 6 : -6, scale: 0.99 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -6, scale: 0.99 }}
+                        exit={{ opacity: 0, y: openUpwards ? 6 : -6, scale: 0.99 }}
                         transition={{ duration: 0.16, ease: "easeOut" }}
                         role="listbox"
-                        className="absolute top-full left-0 right-0 mt-2 z-30 p-2 rounded-2xl bg-white dark:bg-[#1C1C24] border border-[#E2DBCB] dark:border-[#383848] shadow-floating max-h-[340px] overflow-y-auto space-y-1"
+                        data-lenis-prevent="true"
+                        data-lenis-prevent-wheel="true"
+                        data-lenis-prevent-touch="true"
+                        onWheel={(e) => e.stopPropagation()}
+                        onTouchMove={(e) => e.stopPropagation()}
+                        style={{ touchAction: "pan-y" }}
+                        className={`absolute left-0 right-0 z-30 p-2 rounded-2xl bg-white dark:bg-[#1C1C24] border border-[#E2DBCB] dark:border-[#383848] shadow-floating max-h-[360px] sm:max-h-[460px] overflow-y-auto overscroll-contain space-y-1 custom-scrollbar ${
+                          openUpwards ? "bottom-full mb-2" : "top-full mt-2"
+                        }`}
                       >
                         {TOPIC_OPTIONS.map((opt) => {
                           const isSelected = opt.value === selectedCategory;
