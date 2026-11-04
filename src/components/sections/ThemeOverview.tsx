@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Brain, Wrench, Building2 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { THREE_THEMES } from "@/data/content";
+import { scrollToTarget } from "@/lib/scroll";
 
 export default function ThemeOverview() {
   const getIcon = (id: string) => {
@@ -47,6 +48,10 @@ export default function ThemeOverview() {
             <motion.a
               key={item.id}
               href={item.anchor}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTarget(item.anchor, 75);
+              }}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

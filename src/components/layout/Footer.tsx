@@ -3,10 +3,11 @@
 import { FOOTER_CONTENT, SITE_METADATA } from "@/data/content";
 import { ArrowUp, Mail, MapPin, GraduationCap } from "lucide-react";
 import { LinkedInIcon } from "@/components/ui/Icons";
+import { scrollToTarget } from "@/lib/scroll";
 
 export default function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToTarget("#home", 0);
   };
 
   return (
@@ -44,13 +45,14 @@ export default function Footer() {
             </h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
               {FOOTER_CONTENT.navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  className="text-ink-700 dark:text-zinc-300 hover:text-accent-rose dark:hover:text-pink-400 transition-colors py-1 font-medium"
+                  type="button"
+                  onClick={() => scrollToTarget(link.href, 75)}
+                  className="text-left text-ink-700 dark:text-zinc-300 hover:text-accent-rose dark:hover:text-pink-400 transition-colors py-1 font-medium cursor-pointer"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
             </div>
           </div>

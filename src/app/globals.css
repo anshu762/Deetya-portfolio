@@ -30,17 +30,18 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
   }
 
   body {
     background-color: var(--bg-paper);
     color: var(--text-primary);
     font-family: var(--font-jakarta), -apple-system, sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
     min-height: 100dvh;
     transition: background-color 0.25s ease, color 0.25s ease;
   }

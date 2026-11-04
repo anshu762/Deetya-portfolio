@@ -4,11 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Award, MapPin, Sparkles } from "lucide-react";
 import { HERO_CONTENT, SITE_METADATA } from "@/data/content";
+import { scrollToTarget } from "@/lib/scroll";
 
 export default function Hero() {
   const scrollToWork = () => {
-    const el = document.getElementById("overview");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    scrollToTarget("overview", 75);
   };
 
   return (
