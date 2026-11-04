@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="paperGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2A2A32" />
+      <stop offset="100%" stop-color="#141416" />
+    </radialGradient>
+    <linearGradient id="roseAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E07A85" />
+      <stop offset="100%" stop-color="#C96570" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded squircle with fine border -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#paperGlow)" stroke="#3E3E48" stroke-width="2" />
+
+  <!-- Monogram D in elegant editorial serif -->
+  <text 
+    x="26" 
+    y="44" 
+    font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif" 
+    font-size="38" 
+    font-weight="600" 
+    font-style="italic" 
+    fill="#FAF6EE" 
+    text-anchor="middle"
+  >D</text>
+
+  <!-- Watercolor artist pigment dot in muted rose / crimson -->
+  <circle cx="45" cy="22" r="5.5" fill="url(#roseAccent)" />
+</svg>
