@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-paper: #FBF9F5;
+    --bg-surface: #FFFFFF;
+    --bg-muted: #F3EFE6;
+    --text-primary: #18181B;
+    --text-secondary: #57534E;
+    --border-color: #E7E2D6;
+    --accent-rose: #C96570;
+    --accent-terracotta: #B85D3E;
+    --accent-sage: #556B59;
+    --accent-amber: #C28E3A;
+  }
+
+  .dark {
+    --bg-paper: #0E0E10;
+    --bg-surface: #17171C;
+    --bg-muted: #202028;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E2E8F0;
+    --border-color: #2E2E38;
+    --accent-rose: #F472B6;
+    --accent-terracotta: #FB923C;
+    --accent-sage: #86EFAC;
+    --accent-amber: #FBBF24;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-paper);
+    color: var(--text-primary);
+    font-family: var(--font-jakarta), -apple-system, sans-serif;
+    overflow-x: hidden;
+    min-height: 100dvh;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  ::selection {
+    background: #C96570;
+    color: #FFFFFF;
+  }
+}
+
+/* Ensure crystal-clear readability and contrast in dark mode */
+.dark .text-ink-muted {
+  color: #CBD5E1 !important;
+}
+.dark .text-ink-900 {
+  color: #FFFFFF !important;
+}
+.dark .text-ink-800 {
+  color: #F8FAFC !important;
+}
+.dark .text-ink-700 {
+  color: #F1F5F9 !important;
+}
+.dark .text-ink-600 {
+  color: #E2E8F0 !important;
+}
+
+/* Dark mode high-contrast cards and borders */
+.dark .bg-\[\#FAF6EE\],
+.dark .bg-\[\#FAF6EE\]\/70,
+.dark .bg-\[\#F5F0E4\]\/70,
+.dark .bg-\[\#F4EFE5\],
+.dark .bg-\[\#F5F1E8\] {
+  background-color: #16161B !important;
+}
+
+.dark .border-\[\#E6DFCFA\],
+.dark .border-\[\#E7E2D6\],
+.dark .border-\[\#EAE3D4\],
+.dark .border-\[\#E2DBCB\],
+.dark .border-\[\#DDD3C2\],
+.dark .border-\[\#E7E0D2\],
+.dark .border-\[\#F0EAE0\] {
+  border-color: #2E2E38 !important;
+}
+
+/* Lenis smooth scrolling recommendations */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Subtle paper texture overlay */
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 113, 108, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 113, 108, 0.45);
+}
+
+/* Editorial line clip / underline effect */
+.editorial-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.editorial-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
