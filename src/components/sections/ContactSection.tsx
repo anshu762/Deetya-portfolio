@@ -1,14 +1,69 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import confetti from "canvas-confetti";
-import { ArrowUpRight, CheckCircle2, Mail, MapPin, Send, ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  Mail,
+  MapPin,
+  Send,
+  ExternalLink,
+  ChevronDown,
+  Check,
+  GraduationCap,
+  Brain,
+  Building2,
+  Zap,
+  Sparkles,
+  MessageSquare,
+} from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { SITE_METADATA } from "@/data/content";
 import { LinkedInIcon } from "@/components/ui/Icons";
+
+const TOPIC_OPTIONS = [
+  {
+    value: "Admissions & Academic Mentorship",
+    label: "University Admissions & Mentorship",
+    detail: "Academic inquiry, mentor dialogue & recommendations",
+    icon: GraduationCap,
+  },
+  {
+    value: "Research & Clinical Collaboration",
+    label: "Psychology & Neuroscience Research",
+    detail: "ADHD Triad findings, Stroop study data & co-authorship",
+    icon: Brain,
+  },
+  {
+    value: "Project Nazariya Partnership",
+    label: "Project Nazariya Public Spaces",
+    detail: "Police station, school & workplace accessibility tooling",
+    icon: Building2,
+  },
+  {
+    value: "FlickerScope Technology Inquiry",
+    label: "FlickerScope Hardware & Lighting Policy",
+    detail: "$11 wearable specs, PWM flicker & school guidelines",
+    icon: Zap,
+  },
+  {
+    value: "Classical Dance Outreach",
+    label: "Classical Dance & Mental Health Outreach",
+    detail: "Kathak & Bharatanatyam performances & workshops",
+    icon: Sparkles,
+  },
+  {
+    value: "General Message",
+    label: "General Inquiry / Greetings",
+    detail: "Press, speaking opportunities & informal discussion",
+    icon: MessageSquare,
+  },
+];
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Please provide your full name (at least 2 characters)."),
@@ -23,10 +78,15 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [mailtoLink, setMailtoLink] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const {
     register,
     handleSubmit,
+    setValue,
+    watch,
     reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
@@ -34,10 +94,25 @@ export default function ContactSection() {
     defaultValues: {
       name: "",
       email: "",
-      category: "Admissions & Academic Mentorship",
+      category: TOPIC_OPTIONS[0].value,
       message: "",
     },
   });
+
+  const selectedCategory = watch("category");
+  const selectedOption =
+    TOPIC_OPTIONS.find((t) => t.value === selectedCategory) || TOPIC_OPTIONS[0];
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
@@ -216,36 +291,111 @@ export default function ContactSection() {
                   )}
                 </div>
 
-                {/* Inquiry Category */}
-                <div>
+                {/* Bespoke Editorial Custom Select for Topic of Discussion */}
+                <div ref={dropdownRef} className="relative">
                   <label
-                    htmlFor="contact-category"
+                    id="topic-label"
                     className="block text-xs font-mono uppercase tracking-wider text-ink-800 dark:text-zinc-200 mb-1.5"
                   >
                     Topic of Discussion *
                   </label>
-                  <select
-                    id="contact-category"
-                    {...register("category")}
-                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#33333E] text-sm text-ink-900 dark:text-white focus:outline-hidden focus:border-accent-rose transition-colors"
+
+                  {/* Hidden field for react-hook-form */}
+                  <input type="hidden" {...register("category")} />
+
+                  {/* Custom Trigger Button */}
+                  <button
+                    type="button"
+                    aria-labelledby="topic-label"
+                    aria-haspopup="listbox"
+                    aria-expanded={isDropdownOpen}
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#33333E] text-left flex items-center justify-between transition-all hover:border-accent-rose focus:border-accent-rose focus:outline-hidden group shadow-2xs"
                   >
-                    <option value="Admissions & Academic Mentorship">
-                      University Admissions & Mentorship
-                    </option>
-                    <option value="Research & Clinical Collaboration">
-                      Psychology / Neuroscience Research Collaboration
-                    </option>
-                    <option value="Project Nazariya Partnership">
-                      Project Nazariya Public Space Deployment
-                    </option>
-                    <option value="FlickerScope Technology Inquiry">
-                      FlickerScope Device & School Lighting Rules
-                    </option>
-                    <option value="Classical Dance Outreach">
-                      Classical Dance & Mental Health Outreach
-                    </option>
-                    <option value="General Message">Other General Inquiry</option>
-                  </select>
+                    <div className="flex items-center gap-3 truncate">
+                      <div className="p-1.5 rounded-lg bg-[#FAF4EE] dark:bg-[#2A2A36] text-accent-rose shrink-0">
+                        <selectedOption.icon className="w-4 h-4" />
+                      </div>
+                      <div className="truncate">
+                        <div className="font-medium text-ink-900 dark:text-white text-sm truncate">
+                          {selectedOption.label}
+                        </div>
+                        <div className="text-[11px] font-mono text-ink-muted dark:text-zinc-400 truncate">
+                          {selectedOption.detail}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pl-2 shrink-0">
+                      <ChevronDown
+                        className={`w-4 h-4 text-ink-muted dark:text-zinc-400 transition-transform duration-200 ${
+                          isDropdownOpen ? "rotate-180 text-accent-rose" : ""
+                        }`}
+                      />
+                    </div>
+                  </button>
+
+                  {/* Custom Dropdown Popover */}
+                  <AnimatePresence>
+                    {isDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -6, scale: 0.99 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -6, scale: 0.99 }}
+                        transition={{ duration: 0.16, ease: "easeOut" }}
+                        role="listbox"
+                        className="absolute top-full left-0 right-0 mt-2 z-30 p-2 rounded-2xl bg-white dark:bg-[#1C1C24] border border-[#E2DBCB] dark:border-[#383848] shadow-floating max-h-[340px] overflow-y-auto space-y-1"
+                      >
+                        {TOPIC_OPTIONS.map((opt) => {
+                          const isSelected = opt.value === selectedCategory;
+                          const IconComp = opt.icon;
+                          return (
+                            <button
+                              key={opt.value}
+                              type="button"
+                              role="option"
+                              aria-selected={isSelected}
+                              onClick={() => {
+                                setValue("category", opt.value, { shouldValidate: true });
+                                setIsDropdownOpen(false);
+                              }}
+                              className={`w-full p-2.5 rounded-xl text-left flex items-center justify-between transition-colors ${
+                                isSelected
+                                  ? "bg-[#FBF3EE] dark:bg-[#2A2428] text-ink-900 dark:text-white"
+                                  : "hover:bg-[#F8F5EE] dark:hover:bg-[#252530] text-ink-800 dark:text-zinc-200"
+                              }`}
+                            >
+                              <div className="flex items-center gap-3">
+                                <div
+                                  className={`p-2 rounded-lg shrink-0 ${
+                                    isSelected
+                                      ? "bg-accent-rose text-white"
+                                      : "bg-[#F4EFE5] dark:bg-[#2A2A34] text-ink-muted dark:text-zinc-400"
+                                  }`}
+                                >
+                                  <IconComp className="w-4 h-4" />
+                                </div>
+                                <div>
+                                  <div className="text-sm font-medium leading-snug">
+                                    {opt.label}
+                                  </div>
+                                  <div className="text-[11px] font-mono text-ink-muted dark:text-zinc-400">
+                                    {opt.detail}
+                                  </div>
+                                </div>
+                              </div>
+
+                              {isSelected && (
+                                <div className="p-1 rounded-full text-accent-rose shrink-0">
+                                  <Check className="w-4 h-4" />
+                                </div>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Message field */}
