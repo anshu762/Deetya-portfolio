@@ -211,9 +211,9 @@ export default function ResearchSection() {
 
               {/* Right Column: Visual Poster Images (with click-to-expand lightbox preview) */}
               <div className="lg:col-span-4 flex flex-col items-center lg:items-end space-y-2">
-                <div className="flex items-center justify-between w-full max-w-[260px] text-xs font-sans text-ink-muted dark:text-zinc-400 font-medium">
-                  <span>Symposium Documentation</span>
-                  <span className="text-accent-rose text-xs font-semibold">Click to expand</span>
+                <div className="flex items-center justify-between w-full max-w-sm sm:max-w-md text-xs font-sans text-ink-muted dark:text-zinc-400 font-medium">
+                  <span>Symposium Poster &amp; Certification</span>
+                  <span className="text-accent-rose text-xs font-semibold">2 Exhibits &middot; Click to expand</span>
                 </div>
 
                 <div
@@ -233,21 +233,21 @@ export default function ResearchSection() {
                     )
                   }
                   data-cursor="view"
-                  className="group relative w-full max-w-[260px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer shadow-card border-2 border-white dark:border-[#30303C] bg-white dark:bg-zinc-900"
+                  className="group relative w-full max-w-sm sm:max-w-md aspect-[954/737] rounded-2xl overflow-hidden cursor-pointer shadow-card border-2 border-white dark:border-[#30303C] bg-white dark:bg-zinc-900"
                 >
                   <Image
                     src="/images/projects/thinkneuro-1.jpg"
                     alt="ThinkNeuro Research Symposium Poster"
                     fill
-                    sizes="280px"
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 1024px) 100vw, 420px"
+                    className="object-contain p-1.5 group-hover:scale-[1.02] transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1.5 p-4 text-center">
                     <span className="px-3.5 py-1.5 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1.5 shadow-md">
-                      <Eye className="w-3.5 h-3.5" /> View Poster (2)
+                      <Eye className="w-3.5 h-3.5" /> View Poster (2 Exhibits)
                     </span>
                     <span className="text-[11px] text-white/90 font-sans">
-                      Click to inspect high-res poster
+                      Click to inspect full resolution
                     </span>
                   </div>
                 </div>
