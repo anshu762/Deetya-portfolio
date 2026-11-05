@@ -178,6 +178,15 @@ export default function ContactSection() {
 
       setSubmitStatus("success");
 
+      // Reset form fields to empty after submission
+      reset({
+        name: "",
+        email: "",
+        category: TOPIC_OPTIONS[0].value,
+        message: "",
+      });
+      setIsDropdownOpen(false);
+
       // Open user's email client directly with all details filled
       window.location.href = generatedMailto;
     } catch (err) {
@@ -194,8 +203,8 @@ export default function ContactSection() {
         <SectionHeading
           number="09"
           pill="Get In Touch"
-          title="Dialogue & Collaboration"
-          subtitle="Open for university admissions dialogue, cognitive neuroscience research collaborations, and Project Nazariya institutional partnerships."
+          title="Let's talk"
+          subtitle="If you're a university, researcher, institution or someone curious — I'm happy to talk."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">

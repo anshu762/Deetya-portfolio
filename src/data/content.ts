@@ -71,7 +71,7 @@ export const HERO_CONTENT = {
   greeting: "Hi, I'm",
   name: "Deetya Behl",
   subtitle:
-    "IB Diploma student at Invictus International School, Amritsar. Psychology researcher, founder of Project Nazariya, classical dancer.",
+    "I'm in my final year of the IB Diploma at Invictus International School in Amritsar. I do psychology research, run Project Nazariya with communities across the city, and dance classical Kathak and Bharatanatyam.",
   centralQuestion:
     "When someone struggles, is it the brain, the task, or the room around them?",
   supportingParagraph:
@@ -93,7 +93,7 @@ export const THREE_THEMES = [
     theme: "The brain",
     title: "Research",
     description:
-      "ADHD, executive function and attention: IRIS National Fair, ThinkNeuro, GNDU, Mind Detox.",
+      "I study why the same task feels easy for one person and impossible for another. My work covers ADHD, executive function, and attention across four projects.",
     anchor: "#research",
     color: "accent-rose",
     badge: "Cognitive Science",
@@ -105,7 +105,7 @@ export const THREE_THEMES = [
     theme: "The task",
     title: "Tools",
     description:
-      "FlickerScope, an $11 wearable that links LED flicker to restlessness.",
+      "I built a cheap flicker detector and wearable motion tracker to find out if invisible LED pulse patterns actually make students fidget more.",
     anchor: "#tools",
     color: "accent-terracotta",
     badge: "Hardware & Prototype",
@@ -117,7 +117,7 @@ export const THREE_THEMES = [
     theme: "The room",
     title: "Environments",
     description:
-      "Project Nazariya: changing parks, police stations, workplaces and classrooms.",
+      "Nazariya started with a question: who does this space actually work for? I've adapted one framework for parks, police stations, factory floors and classrooms in Amritsar.",
     anchor: "#environments",
     color: "accent-sage",
     badge: "Inclusive Spatial Design",
@@ -134,7 +134,7 @@ export const RESEARCH_CONTENT: {
   sectionLabel: "The brain",
   sectionTitle: "Research",
   intro:
-    "I study why the same task is easy for one person and exhausting for another, starting with ADHD and executive function.",
+    "My research started with one question: why does the same classroom feel manageable to one student and overwhelming to another? I've been working through that question since grade 9.",
   items: [
     {
       id: "adhd-triad",
@@ -142,9 +142,9 @@ export const RESEARCH_CONTENT: {
       role: "Lead Investigator — IRIS National Fair 2026",
       periodOrGrade: "Grades 9–12 · Developmental Neuropsychology",
       description:
-        "An independent study of 40 students asking how executive function, classroom behaviour and home environment together predict functional impairment in ADHD. I chose the measures, ran every Stroop session and did the analysis, then built a model grounded in ICD-11.",
+        "I ran this study independently with 40 students, asking how executive function, classroom behaviour and home environment together predict functional impairment in ADHD. I chose every measure, administered every Stroop session myself, did the analysis, and built the diagnostic model around ICD-11.",
       findings:
-        "Classrooms that brought in visual schedules, task chunking and consistent reinforcement saw impulsivity fall. The project placed in the top 3 for Behavioural Sciences, and I was the sole recipient of the American Psychological Association's Special Award for Research.",
+        "Classrooms that added visual schedules, task chunking and consistent reinforcement saw impulsivity drop by 37%. The study placed top 3 in Behavioural Sciences at IRIS 2026, and I received the APA Special Award — given to one student nationally.",
       keyStats: [
         { label: "IRIS 2026", value: "Top 3 Behavioural Sciences" },
         { label: "Impulsivity reduction", value: "37% with routines" },
@@ -166,7 +166,7 @@ export const RESEARCH_CONTENT: {
       periodOrGrade: "Summer 2026 · 80 hours of neuroscience and R",
       organization: "ThinkNeuro Summer Research Internship Program",
       description:
-        "Using R and Biblioshiny, I mapped citation trends across the 100 most-cited studies on ADHD, working memory and executive function, and co-authored a poster synthesising 43 papers with students from Georgia State, UConn and Trinity. I presented it at the ThinkNeuro symposium and earned distinction in R and bibliometrics.",
+        "Over 80 hours I used R and Biblioshiny to map which 100 papers have shaped ADHD and working memory research most, then co-authored a synthesis poster with students from Georgia State, UConn and Trinity. I presented at the ThinkNeuro symposium and earned a distinction in R and bibliometrics.",
       keyStats: [
         { label: "Neuroscience & R", value: "80 Hours" },
         { label: "Citation mapping", value: "Top 100 Studies" },
@@ -185,7 +185,7 @@ export const RESEARCH_CONTENT: {
       organization: "Department of Laws, Guru Nanak Dev University (GNDU)",
       periodOrGrade: "Mentored Research Project",
       description:
-        "A mentored study design asking whether explaining behaviour in terms of the brain changes how people assign blame and stigma to offenders. I synthesised 21 studies and ran 6,000 Monte Carlo simulations across 4 outcomes to plan the study.",
+        "Does framing behaviour as 'brain-based' change how people judge an offender? I synthesised 21 papers and ran 6,000 Monte Carlo simulations across four outcomes to design this study under mentorship at GNDU's law department.",
       keyStats: [
         { label: "Studies synthesised", value: "21 Studies" },
         { label: "Monte Carlo simulations", value: "6,000 Iterations" },
@@ -200,7 +200,7 @@ export const RESEARCH_CONTENT: {
       periodOrGrade: "Supervised Clinical Traineeship",
       organization: "Mind Detox",
       description:
-        "Shadowed a licensed psychologist in therapy sessions and analysed them in supervision, building active listening, biopsychosocial formulation and ethics skills. Certified by the Counsellors Council of India.",
+        "I sat in on sessions with a licensed psychologist at Mind Detox, then worked through each one in supervision — building a habit of biopsychosocial thinking and learning where the ethical hard calls actually show up in practice. Certified by the Counsellors Council of India.",
       keyStats: [
         { label: "Accreditation", value: "Counsellors Council of India" },
         { label: "Core focus", value: "Biopsychosocial Formulation" },
@@ -214,7 +214,7 @@ export const RESEARCH_CONTENT: {
       periodOrGrade: "Global Academic Network",
       organization: "NeuroSphere · USC Neuro Scholars",
       description:
-        "I critique studies linking brain, cognition, behaviour and mental health with a global network of more than 2,500 members, and question researchers at live talks.",
+        "NeuroSphere and USC Neuro Scholars run weekly journal clubs with researchers globally. I read and critique papers connecting brain, cognition and behaviour, and ask questions directly to researchers at their talks.",
       keyStats: [
         { label: "Global network", value: "2,500+ Members" },
         { label: "Focus areas", value: "Cognition & Behaviour" },
@@ -231,11 +231,11 @@ export const TOOLS_CONTENT = {
   role: "Wearable-tech engineer & Principal Investigator",
   headline: "FlickerScope: can a light bulb make you fidget?",
   description:
-    "Cheap LED bulbs flicker faster than the eye can see. I built an $11 flicker detector and a wearable motion tracker to test whether that hidden flicker shows up as restlessness.",
+    "Most cheap LED bulbs flicker at frequencies the eye can't follow, but the nervous system might. I built an $11 flicker detector and a wearable that tracks fidgeting to see whether that invisible pattern actually shows up in body movement.",
   researchResult:
     "Of 44 students with ADHD or autistic traits, 39 fidgeted more under flickering light.",
   impact:
-    "From the results I drafted flicker-safe lighting rules for schools.",
+    "The results were clear enough that I wrote a set of flicker-safe lighting guidelines that schools could actually apply.",
   metrics: [
     { value: "$11", label: "Total build cost", detail: "Accessible open hardware design" },
     { value: "39 / 44", label: "Fidgeted more under flicker", detail: "Statistically verified response" },
@@ -255,12 +255,12 @@ export const ENVIRONMENTS_CONTENT = {
   brandLogo: "/images/projects/project-nazariya.jpg",
   tagline: "One city, many ways of experiencing it.",
   description:
-    "Nazariya changes everyday spaces so that people who think, learn and communicate differently can use them without having to explain themselves.",
+    "Nazariya's premise is simple: a lot of public spaces aren't built for the range of ways people actually think, learn and communicate. I wanted to change that without asking anyone to justify why they needed it.",
   role: "Founder & Behavioural Design Strategist — Grades 11–12",
   location: "Amritsar, Punjab",
   method: "Listen, notice the barrier, try one change, ask again.",
   coreExplanation:
-    "I developed one framework and adapted it for parks, classrooms, factory floors and police stations, so teachers, supervisors and officers share the same method. Stress and noise use up working memory and attention. Nazariya's tools give some of that back: a visible next step, instructions broken into short steps, and a way to ask for help without needing words or a diagnosis.",
+    "I built one framework and adapted it for every space, so teachers, supervisors and police officers are all working from the same logic. The core insight is straightforward: stress and noise drain working memory before anything else has a chance to happen. Nazariya's tools give some of that capacity back — a visible next step, instructions in short pieces, a way to signal 'I need a moment' without having to explain why.",
   keyStatistics: [
     { value: "800+", label: "Families surveyed across Amritsar" },
     { value: "8+", label: "Public spaces transformed (incl. Company Bagh)" },
@@ -281,7 +281,7 @@ export const ENVIRONMENTS_CONTENT = {
       locationDate: "Police Station Majitha Road, Amritsar — October 2026",
       details: ["17-page handbook", "Multilingual Posters", "Communication cards"],
       description:
-        "Stress shrinks working memory, so an overloaded person can look evasive or uncooperative. Visitors can point to what they need — 'one step at a time', 'give me a moment' — instead of having to explain it under pressure, and Now / Next boards ease the anxiety of not knowing what happens next. I ran awareness workshops with the officers who use them.",
+        "A police station is one of the highest-stress environments most people ever enter. When someone is overwhelmed, they can easily seem uncooperative — even when they're not. I designed communication tools so visitors could point to what they needed rather than explain it, and ran awareness sessions with the officers so they knew how to use what was now on the wall.",
       images: [
         "/images/design/stress-free/design-stressful-handbook-1.jpg",
         "/images/design/stress-free/design-stressful-handbook-2.jpg",
@@ -295,7 +295,7 @@ export const ENVIRONMENTS_CONTENT = {
       locationDate: "Industrial Workplaces, Amritsar — 2026",
       details: ["17-page handbook", "Visual glare/noise poster", "10 practical load cards"],
       description:
-        "Noise, glare and interruptions drain attention before work begins. The poster lets workers name these loads, and each card takes one demand off working memory. The handbook teaches supervisors to demonstrate, split work into short steps, and watch instead of asking 'do you understand?'",
+        "On a factory floor, noise, glare and constant interruption can make it genuinely hard to concentrate — not because of the person, but because of the environment. Each load card names one demand and removes it from working memory. The handbook teaches supervisors to demonstrate instead of explain, and to look rather than ask 'do you understand?'",
       images: [
         "/images/experience/workplace-1.jpg",
         "/images/experience/workplace-2.jpg",
@@ -310,7 +310,7 @@ export const ENVIRONMENTS_CONTENT = {
       locationDate: "Amritsar & Regional Schools — 2025–2026",
       details: ["27-page K–12 teacher handbook", "PRASHAST aligned", "Student questionnaires"],
       description:
-        "Students who seem careless or slow are often just overloaded. The handbook, aligned with PRASHAST, gives teachers classroom-ready ways to cut cognitive and sensory load without labelling anyone. I briefed teachers and parents, and used questionnaires to ask students what makes learning easier or harder.",
+        "A student who looks careless or slow is often just overloaded. The K–12 handbook, aligned with PRASHAST, gives teachers practical ways to reduce cognitive and sensory demand without labelling or diagnosing anyone. I briefed both teachers and parents, then gave students questionnaires to find out what actually makes learning feel easier for them.",
       images: [
         "/images/design/k12/k12-teacher-handbook-1.jpg",
         "/images/design/k12/k12-teacher-handbook-2.jpg",
@@ -331,7 +331,7 @@ export const LEADERSHIP_CONTENT = {
       gradeOrDate: "2025–2026",
       details: "8 workshops conducted with 25 student artists",
       description:
-        "I co-created artwork with 25 students with 12 different developmental conditions, then curated one piece for each month of a Punjabi-English 2027 calendar. Each page pairs the art with a practical inclusion tip, and no diagnosis is disclosed. 500 copies went out across the city.",
+        "I ran eight workshops at IBADAT Special School with 25 student artists across 12 developmental conditions, then chose one piece per month for a 2027 Punjabi-English calendar. Each page pairs the artwork with one practical inclusion tip — no diagnosis mentioned, no labels used. 500 copies went to schools, clinics and families across Amritsar.",
       keyStats: [
         { label: "Student artists", value: "25 Students" },
         { label: "Conditions represented", value: "12 Conditions" },
@@ -353,7 +353,7 @@ export const LEADERSHIP_CONTENT = {
       gradeOrDate: "Grade 12",
       details: "School-wide student governance & wellbeing advocacy",
       description:
-        "I designed and launched five school-wide wellbeing programmes for more than 1,000 students from grades 1 to 12 and their families. Counsellor visits rose 31% as asking for help became normal. They include art corners where younger children can take a short drawing break when they need a pause. I also serve as a Tobacco-Free Educational Institution (ToFEI) Student Monitor.",
+        "As Head Girl I designed and ran five wellbeing programmes for everyone from grade 1 to grade 12 — and their families. One of them sets up 'art corners' where younger kids can take a quiet drawing break when they're overwhelmed. Counsellor visits went up 31%, which to me means help-seeking stopped being something to hide. I also serve as the school's Tobacco-Free Educational Institution student monitor.",
       keyStats: [
         { label: "Wellbeing programmes", value: "5 Programmes" },
         { label: "Students reached", value: "1,000+ Students" },
@@ -492,7 +492,7 @@ export const ART_DANCE_CONTENT = {
     details: "10 years of formal classical training",
     projectTitle: "Dance as Psychology Outreach",
     description:
-      "I choreograph story dances that use abhinaya, classical expressive acting, to take apart myths about mental health. They have been staged at several venues for audiences of 1,000 to 1,200, and I teach free weekly classes.",
+      "I use abhinaya — the expressive storytelling dimension of classical Indian dance — to build performances that actually engage with mental health myths rather than avoid them. They've been staged for audiences between 1,000 and 1,200 people. I also teach a free weekly class, because I think movement should be accessible.",
     stats: [
       { label: "Formal Training", value: "10 Years" },
       { label: "Largest Audience", value: "1,200 Spectators" },

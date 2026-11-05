@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Award, CheckCircle2, ChevronRight, Eye, Sparkles } from "lucide-react";
+import { Award, BadgeCheck, CheckCircle2, ChevronRight, Eye, Sparkles } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import LightboxModal from "@/components/ui/LightboxModal";
 import { RESEARCH_CONTENT } from "@/data/content";
@@ -151,6 +151,40 @@ export default function ResearchSection() {
             Additional Studies & Fellowships
           </h4>
 
+
+          {/* ThinkNeuro Certification Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#FAF4EE] to-[#F3EDE0] dark:from-[#1C1A14] dark:to-[#1A1C22] border border-[#E2DBCB] dark:border-[#333340]"
+          >
+            <div className="flex items-start sm:items-center gap-4">
+              <div className="p-3 rounded-xl bg-accent-terracotta/15 dark:bg-accent-terracotta/20 text-accent-terracotta shrink-0">
+                <BadgeCheck className="w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-[11px] font-mono uppercase tracking-widest text-accent-terracotta dark:text-amber-400 font-semibold mb-0.5">
+                  Certification &mdash; ThinkNeuro Summer Research Internship Program
+                </p>
+                <h5 className="text-base sm:text-lg font-serif font-semibold text-ink-900 dark:text-white leading-snug">
+                  Distinction in R Programming &amp; Bibliometrics
+                </h5>
+                <p className="text-xs text-ink-muted dark:text-zinc-300 mt-1 leading-relaxed">
+                  Earned on completing 80 hours of neuroscience research training, citation network analysis and poster co-authorship at the ThinkNeuro symposium.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-terracotta/10 dark:bg-accent-terracotta/15 text-accent-terracotta dark:text-amber-300 text-[11px] font-mono font-semibold whitespace-nowrap">
+                <Award className="w-3.5 h-3.5" /> Distinction Awarded
+              </span>
+              <span className="text-[11px] font-mono text-ink-muted dark:text-zinc-400">
+                Summer 2026 &middot; 80 Hours
+              </span>
+            </div>
+          </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {otherResearch.map((item, idx) => (
               <motion.div
