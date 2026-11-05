@@ -141,48 +141,118 @@ export default function EnvironmentsSection() {
           </div>
 
           {/* Active Space Details */}
-          <div className="pt-6 sm:pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-6 space-y-5">
-              <div>
-                <span className="text-xs font-sans text-accent-sage dark:text-emerald-400 uppercase tracking-wider block mb-1 font-semibold">
-                  {activeSpace.locationDate}
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-serif font-medium text-ink-900 dark:text-white">
-                  {activeSpace.title}
-                </h3>
+          <div className="pt-6 sm:pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Column: Narrative, Highlights, Commendation & Metrics */}
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-5 sm:space-y-6">
+              <div className="space-y-4 sm:space-y-5">
+                <div>
+                  <span className="text-xs font-sans text-accent-sage dark:text-emerald-400 uppercase tracking-[0.18em] block mb-1 font-semibold">
+                    {activeSpace.locationDate}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-ink-900 dark:text-white">
+                    {activeSpace.title}
+                  </h3>
+                  <p className="text-sm font-sans font-medium text-accent-terracotta dark:text-amber-400 mt-1">
+                    {activeSpace.subtitle}
+                  </p>
+                </div>
+
+                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75]">
+                  {activeSpace.description}
+                </p>
+
+                {/* Highlights Grid */}
+                {"highlights" in activeSpace && activeSpace.highlights && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    {activeSpace.highlights.map((h, i) => (
+                      <div
+                        key={i}
+                        className="p-3.5 rounded-xl bg-white/80 dark:bg-[#202028] border border-[#E7E0D2] dark:border-[#2E2E38]"
+                      >
+                        <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-accent-sage dark:text-emerald-400 block mb-1">
+                          {h.title}
+                        </span>
+                        <p className="text-xs font-sans text-ink-muted dark:text-zinc-300 leading-relaxed">
+                          {h.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Commendation Note */}
+                {"commendation" in activeSpace && activeSpace.commendation && (
+                  <p className="text-xs font-sans text-ink-800 dark:text-zinc-200 p-3 sm:p-3.5 rounded-xl bg-white/60 dark:bg-[#202028]/60 border border-[#E7E0D2] dark:border-[#2E2E38] leading-relaxed flex items-center gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-accent-sage dark:text-emerald-400 shrink-0" />
+                    <span>{activeSpace.commendation}</span>
+                  </p>
+                )}
               </div>
 
-              <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75]">
-                {activeSpace.description}
-              </p>
+              {/* Bottom Section: Metrics, Deliverable Tags & Action */}
+              <div className="pt-4 mt-auto border-t border-[#EAE3D4]/80 dark:border-[#2E2E38]/80 space-y-3.5">
+                {/* Metrics Row */}
+                {"metrics" in activeSpace && activeSpace.metrics && (
+                  <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
+                    {activeSpace.metrics.map((m, i) => (
+                      <div
+                        key={i}
+                        className="p-3 sm:p-3.5 rounded-xl bg-white/70 dark:bg-[#202028]/70 border border-[#E4DCCE] dark:border-[#2E2E38] shadow-2xs"
+                      >
+                        <div className="text-base sm:text-lg font-serif font-semibold text-accent-sage dark:text-emerald-400 tracking-tight">
+                          {m.value}
+                        </div>
+                        <div className="text-[11px] sm:text-xs font-sans text-ink-muted dark:text-zinc-400 font-medium mt-0.5 leading-snug">
+                          {m.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-              {/* Handbook & tool tags */}
-              <div className="pt-2">
-                <span className="text-xs font-sans text-ink-muted dark:text-zinc-400 block mb-2 uppercase tracking-wider font-semibold">
-                  Deliverables &amp; Tooling:
-                </span>
-                <div className="flex flex-wrap gap-2">
+                {/* Deliverables Tags */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-[11px] font-sans text-ink-muted dark:text-zinc-400 uppercase tracking-wider font-semibold mr-1">
+                    Deliverables:
+                  </span>
                   {activeSpace.details.map((d, idx) => (
                     <span
                       key={idx}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#202028] text-xs font-sans font-medium text-ink-800 dark:text-zinc-200 border border-[#E3DCCF] dark:border-[#2E2E38]"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white dark:bg-[#202028] text-xs font-sans font-medium text-ink-800 dark:text-zinc-200 border border-[#E3DCCF] dark:border-[#2E2E38]"
                     >
                       <BookOpen className="w-3 h-3 text-accent-terracotta" />
                       {d}
                     </span>
                   ))}
                 </div>
+
+                {/* Primary Action Button */}
+                <div className="flex items-center justify-between flex-wrap gap-2 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => openSpaceGallery(activeSpace.images, activeSpace.title, 0)}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ink-900 text-white dark:bg-white dark:text-ink-900 text-xs font-sans font-medium hover:bg-accent-sage dark:hover:bg-emerald-600 dark:hover:text-white transition-all shadow-xs cursor-pointer group"
+                  >
+                    <Eye className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+                    <span>View Tooling &amp; Handbooks ({activeSpace.images.length} Photos)</span>
+                  </button>
+                  <span className="text-xs font-sans text-ink-muted dark:text-zinc-400">
+                    Project Nazariya Fieldwork
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Images Grid for Active Space */}
-            <div className="lg:col-span-6 space-y-3">
-              <div className="flex justify-between items-center text-xs font-sans text-ink-muted dark:text-zinc-400 mb-1 font-medium">
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-3">
+              <div className="flex justify-between items-center text-xs font-sans text-ink-muted dark:text-zinc-400 font-medium">
                 <span>Handbooks &amp; Field Photos</span>
-                <span className="text-accent-rose text-xs font-semibold">Click to inspect</span>
+                <span className="text-accent-sage dark:text-emerald-400 text-xs font-semibold flex items-center gap-1">
+                  {activeSpace.images.length} Photos &middot; Click to inspect
+                </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3 sm:gap-3.5 flex-1">
                 {activeSpace.images.map((imgSrc, imgIdx) => (
                   <motion.div
                     key={imgSrc}
@@ -192,8 +262,8 @@ export default function EnvironmentsSection() {
                     className={`relative rounded-2xl overflow-hidden cursor-pointer group shadow-soft bg-zinc-100 dark:bg-zinc-800 border border-[#EAE3D4] dark:border-[#2E2E38] ${
                       activeSpace.images.length === 3 && imgIdx === 2
                         ? "col-span-2 aspect-[16/7]"
-                        : activeSpace.images.length === 4 && imgIdx === 3
-                        ? "col-span-2 aspect-[16/8]"
+                        : activeSpace.images.length === 4
+                        ? "col-span-1 aspect-[4/5]"
                         : "col-span-1 aspect-[4/5]"
                     }`}
                   >
@@ -204,9 +274,9 @@ export default function EnvironmentsSection() {
                       sizes="(max-width: 1024px) 100vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-3 py-1.5 rounded-full bg-white/95 text-xs font-sans font-medium text-ink-900 flex items-center gap-1">
-                        <Eye className="w-3.5 h-3.5" /> Expand
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2.5">
+                      <span className="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-sm text-[11px] font-sans font-medium text-ink-900 flex items-center gap-1 shadow-md">
+                        <Eye className="w-3 h-3" /> Expand ({imgIdx + 1}/{activeSpace.images.length})
                       </span>
                     </div>
                   </motion.div>

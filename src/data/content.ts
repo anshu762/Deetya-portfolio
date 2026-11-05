@@ -282,6 +282,23 @@ export const ENVIRONMENTS_CONTENT = {
       details: ["17-page handbook", "Multilingual Posters", "Communication cards"],
       description:
         "A police station is one of the highest-stress environments most people ever enter. When someone is overwhelmed, they can easily seem uncooperative — even when they're not. I designed communication tools so visitors could point to what they needed rather than explain it, and ran awareness sessions with the officers so they knew how to use what was now on the wall.",
+      highlights: [
+        {
+          title: "Non-Verbal AAC Pointing Boards",
+          desc: "Visual icons allowing distressed or overwhelmed citizens to indicate urgent needs without verbal speech.",
+        },
+        {
+          title: "Officer Sensitisation Training",
+          desc: "Briefed duty officers and staff to identify cognitive freeze, sensory shutdown, and anxiety cues during inquiry.",
+        },
+      ],
+      commendation:
+        "Official institutional commendation received from Inspector Shaminder Singh, SHO, Police Station Majitha Road (Punjab Police).",
+      metrics: [
+        { value: "17 Pages", label: "Protocol Handbook" },
+        { value: "3 Languages", label: "Punjabi, Hindi, English" },
+        { value: "Punjab Police", label: "Official Partner" },
+      ],
       images: [
         "/images/design/stress-free/design-stressful-handbook-1.jpg",
         "/images/design/stress-free/design-stressful-handbook-2.jpg",
@@ -296,6 +313,23 @@ export const ENVIRONMENTS_CONTENT = {
       details: ["17-page handbook", "Visual glare/noise poster", "10 practical load cards"],
       description:
         "On a factory floor, noise, glare and constant interruption can make it genuinely hard to concentrate — not because of the person, but because of the environment. Each load card names one demand and removes it from working memory. The handbook teaches supervisors to demonstrate instead of explain, and to look rather than ask 'do you understand?'",
+      highlights: [
+        {
+          title: "10 Tactile Load Cards",
+          desc: "Mounted visual step-by-step checklists at high-noise industrial workstations to prevent working memory slips.",
+        },
+        {
+          title: "Demonstrate, Don't Interrogate",
+          desc: "Supervisor workflow replacing abstract verbal questioning with direct observable task checkpoints.",
+        },
+      ],
+      commendation:
+        "Piloted across manufacturing assembly lines in Amritsar with participatory feedback loops from line operators.",
+      metrics: [
+        { value: "17 Pages", label: "Supervisor Handbook" },
+        { value: "10 Cards", label: "Workstation Load Aids" },
+        { value: "Amritsar Hub", label: "Industrial Facilities" },
+      ],
       images: [
         "/images/experience/workplace-1.jpg",
         "/images/experience/workplace-2.jpg",
@@ -311,6 +345,23 @@ export const ENVIRONMENTS_CONTENT = {
       details: ["27-page K–12 teacher handbook", "PRASHAST aligned", "Student questionnaires"],
       description:
         "A student who looks careless or slow is often just overloaded. The K–12 handbook, aligned with PRASHAST, gives teachers practical ways to reduce cognitive and sensory demand without labelling or diagnosing anyone. I briefed both teachers and parents, then gave students questionnaires to find out what actually makes learning feel easier for them.",
+      highlights: [
+        {
+          title: "PRASHAST Screening Alignment",
+          desc: "Classroom task adjustments aligned with Department of School Education disability screening standards.",
+        },
+        {
+          title: "Sensory Demand Questionnaires",
+          desc: "Participatory student surveys discovering specific environmental triggers (flickering glare, ambient echo).",
+        },
+      ],
+      commendation:
+        "Comprehensive K–12 teacher reference deployed across regional classrooms to prevent student cognitive fatigue.",
+      metrics: [
+        { value: "27 Pages", label: "Teacher Handbook" },
+        { value: "PRASHAST", label: "Framework Aligned" },
+        { value: "Regional K–12", label: "Classrooms Piloted" },
+      ],
       images: [
         "/images/design/k12/k12-teacher-handbook-1.jpg",
         "/images/design/k12/k12-teacher-handbook-2.jpg",
