@@ -188,7 +188,9 @@ export default function ContactSection() {
       setIsDropdownOpen(false);
 
       // Open user's email client directly with all details filled
-      window.location.href = generatedMailto;
+      setTimeout(() => {
+        window.location.href = generatedMailto;
+      }, 150);
     } catch (err) {
       console.error(err);
       setSubmitStatus("error");

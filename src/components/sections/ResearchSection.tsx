@@ -175,10 +175,31 @@ export default function ResearchSection() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
+            <div className="flex flex-col items-start sm:items-end gap-2 shrink-0">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-terracotta/10 dark:bg-accent-terracotta/15 text-accent-terracotta dark:text-amber-300 text-xs font-sans font-medium whitespace-nowrap">
                 <Award className="w-3.5 h-3.5" /> Distinction Awarded
               </span>
+              <button
+                type="button"
+                onClick={() =>
+                  openLightbox(
+                    [
+                      {
+                        src: "/images/projects/thinkneuro-1.jpg",
+                        title: "ThinkNeuro Research Symposium Poster",
+                      },
+                      {
+                        src: "/images/projects/thinkneuro-2.jpg",
+                        title: "ThinkNeuro Research Presentation",
+                      },
+                    ],
+                    0
+                  )
+                }
+                className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-accent-terracotta dark:text-amber-400 hover:underline cursor-pointer"
+              >
+                <Eye className="w-3.5 h-3.5" /> View Poster / Photos (2)
+              </button>
               <span className="text-xs font-sans text-ink-muted dark:text-zinc-400">
                 Summer 2026 &middot; 80 Hours
               </span>
