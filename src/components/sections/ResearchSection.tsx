@@ -146,66 +146,117 @@ export default function ResearchSection() {
         )}
 
         {/* Secondary Research Initiatives Grid */}
-        <div className="space-y-6">
-          <h4 className="text-xs font-sans uppercase tracking-[0.2em] text-ink-muted dark:text-zinc-400 font-semibold">
-            Additional Studies & Fellowships
-          </h4>
+        <div className="space-y-8">
+          <div className="flex items-center justify-between">
+            <h4 className="text-xs font-sans uppercase tracking-[0.2em] text-ink-muted dark:text-zinc-400 font-semibold">
+              Additional Studies &amp; Fellowships
+            </h4>
+            <span className="text-xs font-sans text-accent-rose font-medium hidden sm:inline-block">
+              Cognitive Sciences &middot; Clinical Traineeships &middot; Neuro-law
+            </span>
+          </div>
 
-          {/* ThinkNeuro Certification Banner */}
+          {/* ThinkNeuro Featured Certification Showcase */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#FAF4EE] to-[#F3EDE0] dark:from-[#1C1A14] dark:to-[#1A1C22] border border-[#E2DBCB] dark:border-[#333340]"
+            className="rounded-3xl bg-gradient-to-br from-[#FAF5EE] via-[#F6EFE3] to-[#EFE7D7] dark:from-[#181820] dark:via-[#1A1A22] dark:to-[#16161D] border border-[#E2DBCB] dark:border-[#333340] p-6 sm:p-8 md:p-10 shadow-card overflow-hidden"
           >
-            <div className="flex items-start sm:items-center gap-4">
-              <div className="p-3 rounded-xl bg-accent-terracotta/15 dark:bg-accent-terracotta/20 text-accent-terracotta shrink-0">
-                <BadgeCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <p className="text-xs font-sans uppercase tracking-[0.16em] text-accent-terracotta dark:text-amber-400 font-semibold mb-0.5">
-                  Certification &mdash; ThinkNeuro Summer Research Internship Program
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Column: Certification details */}
+              <div className="lg:col-span-8 space-y-5">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-terracotta/15 dark:bg-accent-terracotta/25 text-accent-terracotta dark:text-amber-300 text-xs font-sans font-semibold tracking-wide">
+                    <BadgeCheck className="w-4 h-4" /> Certification &mdash; ThinkNeuro SRIP
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#22222C] border border-[#E2DBCB] dark:border-[#333342] text-xs font-sans font-semibold text-accent-terracotta dark:text-amber-300 shadow-2xs">
+                    <Award className="w-3.5 h-3.5 text-accent-amber" /> Distinction Awarded
+                  </span>
+                  <span className="text-xs font-sans text-ink-muted dark:text-zinc-400 font-medium">
+                    Summer 2026 &middot; 80 Hours
+                  </span>
+                </div>
+
+                <div className="space-y-1.5">
+                  <h4 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold text-ink-900 dark:text-white leading-snug">
+                    Distinction in R Programming &amp; Bibliometrics
+                  </h4>
+                  <p className="text-xs sm:text-sm font-sans font-medium text-accent-rose">
+                    ThinkNeuro Summer Research Internship Program &middot; ADHD Citation Synthesis
+                  </p>
+                </div>
+
+                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75] max-w-2xl">
+                  Over 80 hours I used R and Biblioshiny to map which 100 papers have shaped ADHD and working memory research most, then co-authored a synthesis poster with students from Georgia State, UConn and Trinity. Presented at the ThinkNeuro symposium with distinction awarded in computational bibliometrics.
                 </p>
-                <h5 className="text-base sm:text-lg font-serif font-semibold text-ink-900 dark:text-white leading-snug">
-                  Distinction in R Programming &amp; Bibliometrics
-                </h5>
-                <p className="text-xs text-ink-muted dark:text-zinc-300 mt-1 leading-relaxed">
-                  Earned on completing 80 hours of neuroscience research training, citation network analysis and poster co-authorship at the ThinkNeuro symposium.
-                </p>
+
+                {/* Highlights row */}
+                <div className="grid grid-cols-3 gap-3 pt-2 max-w-lg">
+                  <div className="p-3.5 rounded-xl bg-white/80 dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#2D2D38]">
+                    <div className="text-xs font-sans text-ink-muted dark:text-zinc-400 mb-0.5">Neuroscience &amp; R</div>
+                    <div className="text-base sm:text-lg font-serif font-semibold text-ink-900 dark:text-white">80 Hours</div>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/80 dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#2D2D38]">
+                    <div className="text-xs font-sans text-ink-muted dark:text-zinc-400 mb-0.5">Citation Mapping</div>
+                    <div className="text-base sm:text-lg font-serif font-semibold text-ink-900 dark:text-white">Top 100 Studies</div>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/80 dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#2D2D38]">
+                    <div className="text-xs font-sans text-ink-muted dark:text-zinc-400 mb-0.5">Synthesis</div>
+                    <div className="text-base sm:text-lg font-serif font-semibold text-ink-900 dark:text-white">43 Papers</div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col items-start sm:items-end gap-2 shrink-0">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-terracotta/10 dark:bg-accent-terracotta/15 text-accent-terracotta dark:text-amber-300 text-xs font-sans font-medium whitespace-nowrap">
-                <Award className="w-3.5 h-3.5" /> Distinction Awarded
-              </span>
-              <button
-                type="button"
-                onClick={() =>
-                  openLightbox(
-                    [
-                      {
-                        src: "/images/projects/thinkneuro-1.jpg",
-                        title: "ThinkNeuro Research Symposium Poster",
-                      },
-                      {
-                        src: "/images/projects/thinkneuro-2.jpg",
-                        title: "ThinkNeuro Research Presentation",
-                      },
-                    ],
-                    0
-                  )
-                }
-                className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-accent-terracotta dark:text-amber-400 hover:underline cursor-pointer"
-              >
-                <Eye className="w-3.5 h-3.5" /> View Poster / Photos (2)
-              </button>
-              <span className="text-xs font-sans text-ink-muted dark:text-zinc-400">
-                Summer 2026 &middot; 80 Hours
-              </span>
+
+              {/* Right Column: Visual Poster Images (with click-to-expand lightbox preview) */}
+              <div className="lg:col-span-4 flex flex-col items-center lg:items-end space-y-2">
+                <div className="flex items-center justify-between w-full max-w-[260px] text-xs font-sans text-ink-muted dark:text-zinc-400 font-medium">
+                  <span>Symposium Documentation</span>
+                  <span className="text-accent-rose text-xs font-semibold">Click to expand</span>
+                </div>
+
+                <div
+                  onClick={() =>
+                    openLightbox(
+                      [
+                        {
+                          src: "/images/projects/thinkneuro-1.jpg",
+                          title: "ThinkNeuro Research Symposium Poster — Part 1",
+                        },
+                        {
+                          src: "/images/projects/thinkneuro-2.jpg",
+                          title: "ThinkNeuro Research Symposium Presentation — Part 2",
+                        },
+                      ],
+                      0
+                    )
+                  }
+                  data-cursor="view"
+                  className="group relative w-full max-w-[260px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer shadow-card border-2 border-white dark:border-[#30303C] bg-white dark:bg-zinc-900"
+                >
+                  <Image
+                    src="/images/projects/thinkneuro-1.jpg"
+                    alt="ThinkNeuro Research Symposium Poster"
+                    fill
+                    sizes="280px"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1.5 p-4 text-center">
+                    <span className="px-3.5 py-1.5 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1.5 shadow-md">
+                      <Eye className="w-3.5 h-3.5" /> View Poster (2)
+                    </span>
+                    <span className="text-[11px] text-white/90 font-sans">
+                      Click to inspect high-res poster
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          {/* 4 Research Initiative Cards with Mathematically Aligned Baselines */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {otherResearch.map((item, idx) => (
               <motion.div
                 key={item.id}
@@ -213,60 +264,56 @@ export default function ResearchSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#16161B] border border-[#E7E2D6] dark:border-[#2E2E38] shadow-soft hover:shadow-card transition-all"
+                className="h-full flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#16161B] border border-[#E7E2D6] dark:border-[#2E2E38] shadow-soft hover:shadow-card transition-all"
               >
-                <div className="space-y-4">
-                  <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-col flex-1">
+                  {/* Uniform Tags Container (28px height) */}
+                  <div className="h-7 flex items-center gap-1.5 overflow-hidden mb-3">
                     {item.tags.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] font-sans font-medium px-2.5 py-0.5 rounded-full bg-[#F4EFE5] dark:bg-[#22222A] text-ink-700 dark:text-zinc-200"
+                        className="text-[11px] font-sans font-medium px-2.5 py-0.5 rounded-full bg-[#F4EFE5] dark:bg-[#22222A] text-ink-700 dark:text-zinc-200 whitespace-nowrap"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div>
-                    <p className="text-xs font-sans font-semibold text-accent-rose mb-1">
+                  {/* Uniform Organization Header (40px height) */}
+                  <div className="h-10 flex items-center mb-1">
+                    <p className="text-xs font-sans font-semibold text-accent-rose line-clamp-2 leading-snug">
                       {item.organization || item.periodOrGrade}
                     </p>
-                    <h4 className="text-lg sm:text-xl font-serif font-medium text-ink-900 dark:text-white">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-ink-muted dark:text-zinc-400 mt-1">{item.role}</p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-ink-muted dark:text-zinc-200 leading-[1.7]">
-                    {item.description}
-                  </p>
+                  {/* Uniform Title (56px height) */}
+                  <div className="h-14 flex items-center mb-1">
+                    <h4 className="text-lg font-serif font-medium text-ink-900 dark:text-white line-clamp-2 leading-snug">
+                      {item.title}
+                    </h4>
+                  </div>
 
-                  {/* ThinkNeuro Images trigger if present */}
-                  {item.images && item.images.length > 0 && (
-                    <div className="pt-2">
-                      <button
-                        onClick={() =>
-                          openLightbox(
-                            item.images?.map((src) => ({
-                              src,
-                              title: `${item.title} Presentation`,
-                            })) || [],
-                            0
-                          )
-                        }
-                        className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-accent-terracotta dark:text-amber-400 hover:underline"
-                      >
-                        <Eye className="w-3.5 h-3.5" /> View Poster / Photos (2)
-                      </button>
-                    </div>
-                  )}
+                  {/* Uniform Role (32px height) */}
+                  <div className="h-8 flex items-center mb-3">
+                    <p className="text-xs text-ink-muted dark:text-zinc-400 line-clamp-1">
+                      {item.role}
+                    </p>
+                  </div>
+
+                  {/* Uniform Description (min 88px) */}
+                  <div className="min-h-[88px] flex-1">
+                    <p className="text-xs sm:text-sm text-ink-muted dark:text-zinc-200 leading-[1.7] line-clamp-4">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-[#F0EAE0] dark:border-[#282834] space-y-1">
+                {/* Pinned Bottom Stats Row */}
+                <div className="pt-4 mt-5 border-t border-[#F0EAE0] dark:border-[#282834] space-y-1.5">
                   {item.keyStats.slice(0, 2).map((stat, i) => (
-                    <div key={i} className="flex justify-between items-center text-xs">
-                      <span className="text-ink-muted dark:text-zinc-400">{stat.label}:</span>
-                      <span className="font-sans font-semibold text-ink-900 dark:text-white">
+                    <div key={i} className="h-5 flex justify-between items-center text-xs">
+                      <span className="text-ink-muted dark:text-zinc-400 truncate pr-2">{stat.label}:</span>
+                      <span className="font-sans font-semibold text-ink-900 dark:text-white shrink-0">
                         {stat.value}
                       </span>
                     </div>
