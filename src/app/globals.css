@@ -40,7 +40,7 @@
   body {
     background-color: var(--bg-paper);
     color: var(--text-primary);
-    font-family: var(--font-jakarta), -apple-system, sans-serif;
+    font-family: var(--font-sans), -apple-system, sans-serif;
     overflow-x: clip;
     min-height: 100dvh;
     transition: background-color 0.25s ease, color 0.25s ease;

@@ -41,9 +41,9 @@ export default function EnvironmentsSection() {
         <div className="mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-4 flex-wrap">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-accent-sage dark:text-emerald-400 uppercase tracking-wider font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs font-sans text-accent-sage dark:text-emerald-400 uppercase tracking-[0.18em] font-semibold">
                 <MapPin className="w-3.5 h-3.5" />
-                <span>{ENVIRONMENTS_CONTENT.role} · {ENVIRONMENTS_CONTENT.location}</span>
+                <span>{ENVIRONMENTS_CONTENT.role} &middot; {ENVIRONMENTS_CONTENT.location}</span>
               </div>
             </div>
 
@@ -62,7 +62,7 @@ export default function EnvironmentsSection() {
               {ENVIRONMENTS_CONTENT.description}
             </p>
 
-            <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-relaxed">
+            <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75]">
               {ENVIRONMENTS_CONTENT.coreExplanation}
             </p>
 
@@ -70,7 +70,7 @@ export default function EnvironmentsSection() {
             <div className="p-4 sm:p-5 rounded-2xl bg-[#FAF6EE] dark:bg-[#16161B] border border-[#E7DFCFA] dark:border-[#2E2E38] flex items-center gap-3">
               <Sparkles className="w-5 h-5 text-accent-amber shrink-0" />
               <div>
-                <span className="text-xs font-mono uppercase tracking-wider text-ink-muted dark:text-zinc-400 block">
+                <span className="text-xs font-sans uppercase tracking-[0.18em] text-ink-muted dark:text-zinc-400 block font-medium">
                   Methodology
                 </span>
                 <span className="text-sm sm:text-base font-serif italic text-ink-900 dark:text-white font-medium">
@@ -90,7 +90,7 @@ export default function EnvironmentsSection() {
                 <div className="text-3xl sm:text-4xl font-serif font-semibold text-accent-sage dark:text-emerald-400 mb-2">
                   {stat.value}
                 </div>
-                <div className="text-xs font-mono text-ink-muted dark:text-zinc-300 leading-snug">
+                <div className="text-xs font-sans font-medium text-ink-muted dark:text-zinc-300 leading-snug">
                   {stat.label}
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function EnvironmentsSection() {
 
         {/* Interventions Matrix */}
         <div className="mb-16">
-          <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-ink-muted dark:text-zinc-400 mb-6">
+          <h4 className="text-xs font-sans uppercase tracking-[0.2em] text-ink-muted dark:text-zinc-400 mb-6 font-semibold">
             Core Assistive Interventions Deployed
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -144,7 +144,7 @@ export default function EnvironmentsSection() {
           <div className="pt-6 sm:pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-6 space-y-5">
               <div>
-                <span className="text-xs font-mono text-accent-sage dark:text-emerald-400 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-sans text-accent-sage dark:text-emerald-400 uppercase tracking-wider block mb-1 font-semibold">
                   {activeSpace.locationDate}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-serif font-medium text-ink-900 dark:text-white">
@@ -152,20 +152,20 @@ export default function EnvironmentsSection() {
                 </h3>
               </div>
 
-              <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-relaxed">
+              <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75]">
                 {activeSpace.description}
               </p>
 
               {/* Handbook & tool tags */}
               <div className="pt-2">
-                <span className="text-xs font-mono text-ink-muted dark:text-zinc-400 block mb-2 uppercase tracking-wider">
-                  Deliverables & Tooling:
+                <span className="text-xs font-sans text-ink-muted dark:text-zinc-400 block mb-2 uppercase tracking-wider font-semibold">
+                  Deliverables &amp; Tooling:
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {activeSpace.details.map((d, idx) => (
                     <span
                       key={idx}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#202028] text-xs font-mono text-ink-800 dark:text-zinc-200 border border-[#E3DCCF] dark:border-[#2E2E38]"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white dark:bg-[#202028] text-xs font-sans font-medium text-ink-800 dark:text-zinc-200 border border-[#E3DCCF] dark:border-[#2E2E38]"
                     >
                       <BookOpen className="w-3 h-3 text-accent-terracotta" />
                       {d}
@@ -177,9 +177,9 @@ export default function EnvironmentsSection() {
 
             {/* Images Grid for Active Space */}
             <div className="lg:col-span-6 space-y-3">
-              <div className="flex justify-between items-center text-xs font-mono text-ink-muted dark:text-zinc-400 mb-1">
-                <span>Handbooks & Field Photos</span>
-                <span className="text-accent-rose text-[11px] font-semibold">Click to inspect</span>
+              <div className="flex justify-between items-center text-xs font-sans text-ink-muted dark:text-zinc-400 mb-1 font-medium">
+                <span>Handbooks &amp; Field Photos</span>
+                <span className="text-accent-rose text-xs font-semibold">Click to inspect</span>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
@@ -205,7 +205,7 @@ export default function EnvironmentsSection() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-3 py-1.5 rounded-full bg-white/95 text-xs font-mono text-ink-900 flex items-center gap-1">
+                      <span className="px-3 py-1.5 rounded-full bg-white/95 text-xs font-sans font-medium text-ink-900 flex items-center gap-1">
                         <Eye className="w-3.5 h-3.5" /> Expand
                       </span>
                     </div>

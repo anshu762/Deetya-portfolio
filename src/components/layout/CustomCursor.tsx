@@ -52,7 +52,7 @@ export default function CustomCursor() {
     <div className="custom-cursor fixed inset-0 pointer-events-none z-50 overflow-hidden">
       {/* Outer ring */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full flex items-center justify-center font-mono pointer-events-none"
+        className="fixed top-0 left-0 rounded-full flex items-center justify-center font-sans pointer-events-none"
         animate={{
           x: mousePosition.x - (cursorType === "view" ? 32 : cursorType === "pointer" ? 22 : 12),
           y: mousePosition.y - (cursorType === "view" ? 32 : cursorType === "pointer" ? 22 : 12),

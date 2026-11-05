@@ -43,7 +43,7 @@ export default function ResearchSection() {
                     <Award className="w-3.5 h-3.5" />
                     Sole Recipient · APA Special Award
                   </span>
-                  <span className="text-xs font-mono text-ink-muted dark:text-zinc-400">
+                  <span className="text-xs font-sans text-ink-muted dark:text-zinc-400">
                     {adhdTriad.periodOrGrade}
                   </span>
                 </div>
@@ -52,19 +52,19 @@ export default function ResearchSection() {
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-ink-900 dark:text-white">
                     {adhdTriad.title}
                   </h3>
-                  <p className="text-sm font-mono text-accent-terracotta dark:text-amber-400 mt-1">
+                  <p className="text-sm font-sans font-medium text-accent-terracotta dark:text-amber-400 mt-1">
                     {adhdTriad.role}
                   </p>
                 </div>
 
-                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-relaxed">
+                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75]">
                   {adhdTriad.description}
                 </p>
 
                 {/* Key Findings Box */}
                 {adhdTriad.findings && (
                   <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#202028] border border-[#EAE3D4] dark:border-[#2D2D38] space-y-2">
-                    <p className="text-xs font-mono uppercase tracking-wider text-ink-muted dark:text-zinc-300 flex items-center gap-1.5 font-semibold">
+                    <p className="text-xs font-sans uppercase tracking-[0.18em] text-ink-muted dark:text-zinc-300 flex items-center gap-1.5 font-semibold">
                       <Sparkles className="w-3.5 h-3.5 text-accent-rose" />
                       Empirical Findings
                     </p>
@@ -81,7 +81,7 @@ export default function ResearchSection() {
                       key={i}
                       className="p-3.5 sm:p-4 rounded-xl bg-[#F4EFE5] dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#2D2D38]"
                     >
-                      <div className="text-[11px] font-mono text-ink-muted dark:text-zinc-400 mb-1">{stat.label}</div>
+                      <div className="text-xs font-sans text-ink-muted dark:text-zinc-400 mb-1">{stat.label}</div>
                       <div className="text-sm sm:text-base md:text-lg font-serif font-semibold text-ink-900 dark:text-white">
                         {stat.value}
                       </div>
@@ -91,7 +91,7 @@ export default function ResearchSection() {
 
                 {/* Judges Citation */}
                 {adhdTriad.judgesOrMentors && (
-                  <p className="text-xs text-ink-muted dark:text-zinc-300 border-t border-[#EAE3D4] dark:border-[#2A2A33] pt-4 font-mono">
+                  <p className="text-xs text-ink-muted dark:text-zinc-300 border-t border-[#EAE3D4] dark:border-[#2A2A33] pt-4 font-sans leading-relaxed">
                     <span className="font-semibold text-ink-800 dark:text-white">Judges: </span>
                     {adhdTriad.judgesOrMentors}
                   </p>
@@ -100,9 +100,9 @@ export default function ResearchSection() {
 
               {/* Research Presentation Image Showcase */}
               <div className="lg:col-span-5 space-y-4">
-                <div className="text-xs font-mono tracking-widest uppercase text-ink-muted dark:text-zinc-400 mb-2 flex items-center justify-between">
+                <div className="text-xs font-sans tracking-wider uppercase text-ink-muted dark:text-zinc-400 mb-2 flex items-center justify-between font-medium">
                   <span>IRIS National Fair Showcase</span>
-                  <span className="text-[11px] text-accent-rose font-semibold">Click to expand</span>
+                  <span className="text-xs text-accent-rose font-semibold">Click to expand</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
@@ -147,10 +147,9 @@ export default function ResearchSection() {
 
         {/* Secondary Research Initiatives Grid */}
         <div className="space-y-6">
-          <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-ink-muted dark:text-zinc-400">
+          <h4 className="text-xs font-sans uppercase tracking-[0.2em] text-ink-muted dark:text-zinc-400 font-semibold">
             Additional Studies & Fellowships
           </h4>
-
 
           {/* ThinkNeuro Certification Banner */}
           <motion.div
@@ -165,7 +164,7 @@ export default function ResearchSection() {
                 <BadgeCheck className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-[11px] font-mono uppercase tracking-widest text-accent-terracotta dark:text-amber-400 font-semibold mb-0.5">
+                <p className="text-xs font-sans uppercase tracking-[0.16em] text-accent-terracotta dark:text-amber-400 font-semibold mb-0.5">
                   Certification &mdash; ThinkNeuro Summer Research Internship Program
                 </p>
                 <h5 className="text-base sm:text-lg font-serif font-semibold text-ink-900 dark:text-white leading-snug">
@@ -177,10 +176,10 @@ export default function ResearchSection() {
               </div>
             </div>
             <div className="flex flex-col items-start sm:items-end gap-1.5 shrink-0">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-terracotta/10 dark:bg-accent-terracotta/15 text-accent-terracotta dark:text-amber-300 text-[11px] font-mono font-semibold whitespace-nowrap">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-terracotta/10 dark:bg-accent-terracotta/15 text-accent-terracotta dark:text-amber-300 text-xs font-sans font-medium whitespace-nowrap">
                 <Award className="w-3.5 h-3.5" /> Distinction Awarded
               </span>
-              <span className="text-[11px] font-mono text-ink-muted dark:text-zinc-400">
+              <span className="text-xs font-sans text-ink-muted dark:text-zinc-400">
                 Summer 2026 &middot; 80 Hours
               </span>
             </div>
@@ -200,7 +199,7 @@ export default function ResearchSection() {
                     {item.tags.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#F4EFE5] dark:bg-[#22222A] text-ink-700 dark:text-zinc-200"
+                        className="text-[11px] font-sans font-medium px-2.5 py-0.5 rounded-full bg-[#F4EFE5] dark:bg-[#22222A] text-ink-700 dark:text-zinc-200"
                       >
                         {tag}
                       </span>
@@ -208,7 +207,7 @@ export default function ResearchSection() {
                   </div>
 
                   <div>
-                    <p className="text-xs font-mono text-accent-rose mb-1">
+                    <p className="text-xs font-sans font-semibold text-accent-rose mb-1">
                       {item.organization || item.periodOrGrade}
                     </p>
                     <h4 className="text-lg sm:text-xl font-serif font-medium text-ink-900 dark:text-white">
@@ -217,7 +216,7 @@ export default function ResearchSection() {
                     <p className="text-xs text-ink-muted dark:text-zinc-400 mt-1">{item.role}</p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-ink-muted dark:text-zinc-200 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-ink-muted dark:text-zinc-200 leading-[1.7]">
                     {item.description}
                   </p>
 
@@ -234,7 +233,7 @@ export default function ResearchSection() {
                             0
                           )
                         }
-                        className="inline-flex items-center gap-1.5 text-xs font-mono text-accent-terracotta dark:text-amber-400 hover:underline"
+                        className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-accent-terracotta dark:text-amber-400 hover:underline"
                       >
                         <Eye className="w-3.5 h-3.5" /> View Poster / Photos (2)
                       </button>
@@ -246,7 +245,7 @@ export default function ResearchSection() {
                   {item.keyStats.slice(0, 2).map((stat, i) => (
                     <div key={i} className="flex justify-between items-center text-xs">
                       <span className="text-ink-muted dark:text-zinc-400">{stat.label}:</span>
-                      <span className="font-mono font-medium text-ink-900 dark:text-white">
+                      <span className="font-sans font-semibold text-ink-900 dark:text-white">
                         {stat.value}
                       </span>
                     </div>

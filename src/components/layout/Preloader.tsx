@@ -67,7 +67,7 @@ export default function Preloader() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-xs uppercase tracking-[0.3em] text-[#78716C] mb-3 font-mono"
+              className="text-xs uppercase tracking-[0.25em] text-[#78716C] mb-3 font-sans font-medium"
             >
               Curated Portfolio
             </motion.p>
@@ -98,7 +98,7 @@ export default function Preloader() {
             </motion.p>
           </div>
 
-          <div className="absolute bottom-8 text-[11px] font-mono tracking-widest text-[#A8A29E] uppercase">
+          <div className="absolute bottom-8 text-xs font-sans tracking-wide text-[#A8A29E]">
             Click anywhere or press Esc to skip
           </div>
         </motion.div>

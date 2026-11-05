@@ -17,7 +17,7 @@ export default function MarqueeStrip() {
       <div className="flex w-fit animate-marquee whitespace-nowrap">
         {[...items, ...items, ...items].map((text, idx) => (
           <div key={idx} className="flex items-center mx-6">
-            <span className="text-xs uppercase font-mono tracking-[0.25em] text-ink-600 dark:text-zinc-400">
+            <span className="text-xs uppercase font-sans font-medium tracking-[0.2em] text-ink-700 dark:text-zinc-300">
               {text}
             </span>
             <span className="ml-8 w-1.5 h-1.5 rounded-full bg-accent-rose" />

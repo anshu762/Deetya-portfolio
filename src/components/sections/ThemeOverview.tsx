@@ -40,7 +40,7 @@ export default function ThemeOverview() {
           number="01"
           pill="The Central Framework"
           title="Three Pillars of Inquiry"
-          subtitle="Connecting cognitive inquiry, assistive engineering, and inclusive physical architecture."
+          subtitle="Researching the brain, building assistive tools, and redesigning physical spaces."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -63,8 +63,8 @@ export default function ThemeOverview() {
               <div className="space-y-5 sm:space-y-6">
                 {/* Header row: Number + Icon */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono tracking-widest text-ink-muted dark:text-zinc-400">
-                    PILLAR [{item.pillarNumber}]
+                  <span className="text-xs font-sans tracking-[0.2em] uppercase font-semibold text-accent-rose">
+                    0{item.pillarNumber} &mdash; Pillar
                   </span>
                   <div className="p-3 rounded-2xl bg-white dark:bg-[#22222A] shadow-xs group-hover:scale-110 transition-transform">
                     {getIcon(item.id)}
@@ -73,7 +73,7 @@ export default function ThemeOverview() {
 
                 {/* Subtitle & Title */}
                 <div>
-                  <p className="text-xs font-mono uppercase tracking-widest text-accent-rose mb-1">
+                  <p className="text-xs font-sans uppercase tracking-[0.18em] text-ink-muted dark:text-zinc-400 mb-1 font-medium">
                     {item.theme}
                   </p>
                   <h3 className="text-2xl sm:text-3xl font-serif font-medium text-ink-900 dark:text-white">
@@ -82,14 +82,14 @@ export default function ThemeOverview() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-ink-muted dark:text-zinc-200 leading-relaxed font-normal">
+                <p className="text-sm text-ink-muted dark:text-zinc-200 leading-[1.75] font-normal">
                   {item.description}
                 </p>
               </div>
 
               {/* Bottom Row: Badge & Link Arrow */}
               <div className="pt-6 sm:pt-8 mt-6 border-t border-[#EAE3D4] dark:border-[#272732] flex items-center justify-between gap-2">
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-white dark:bg-[#202028] text-ink-800 dark:text-zinc-100 border border-[#E3DCCF] dark:border-[#383844] truncate">
+                <span className="text-xs font-sans font-medium px-3.5 py-1 rounded-full bg-white dark:bg-[#202028] text-ink-800 dark:text-zinc-100 border border-[#E3DCCF] dark:border-[#383844] truncate">
                   {item.highlight}
                 </span>
 

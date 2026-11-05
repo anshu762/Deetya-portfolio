@@ -227,7 +227,7 @@ export default function ContactSection() {
                       <LinkedInIcon className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-mono text-ink-muted dark:text-zinc-400">LinkedIn Profile</div>
+                      <div className="text-xs font-sans font-medium text-ink-muted dark:text-zinc-400">LinkedIn Profile</div>
                       <div className="text-sm font-medium text-ink-900 dark:text-white">
                         linkedin.com/in/deetyabehl
                       </div>
@@ -244,7 +244,7 @@ export default function ContactSection() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="truncate">
-                    <div className="text-xs font-mono text-ink-muted dark:text-zinc-400">Email Inquiry</div>
+                    <div className="text-xs font-sans font-medium text-ink-muted dark:text-zinc-400">Email Inquiry</div>
                     <div className="text-sm font-medium text-ink-900 dark:text-white truncate">
                       {SITE_METADATA.socials.email}
                     </div>
@@ -256,7 +256,7 @@ export default function ContactSection() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-mono text-ink-muted dark:text-zinc-400">Academic Institution</div>
+                    <div className="text-xs font-sans font-medium text-ink-muted dark:text-zinc-400">Academic Institution</div>
                     <div className="text-sm font-medium text-ink-900 dark:text-white">
                       {SITE_METADATA.socials.school}
                     </div>
@@ -275,7 +275,7 @@ export default function ContactSection() {
           <div className="lg:col-span-7">
             <div className="rounded-3xl bg-[#FAF6EE] dark:bg-[#16161B] border border-[#E6DFCFA] dark:border-[#2E2E38] p-6 sm:p-10 shadow-card">
               <div className="mb-6">
-                <span className="text-xs font-mono uppercase tracking-widest text-accent-rose block mb-1">
+                <span className="text-xs font-sans uppercase tracking-[0.18em] text-accent-rose font-semibold block mb-1">
                   Send Direct Inquiry
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-serif font-medium text-ink-900 dark:text-white">
@@ -288,7 +288,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="block text-xs font-mono uppercase tracking-wider text-ink-800 dark:text-zinc-200 mb-1.5"
+                    className="block text-xs font-sans uppercase tracking-[0.16em] font-semibold text-ink-800 dark:text-zinc-200 mb-1.5"
                   >
                     Your Name *
                   </label>
@@ -304,7 +304,7 @@ export default function ContactSection() {
                     }`}
                   />
                   {errors.name && (
-                    <p className="text-xs text-red-500 mt-1 font-mono">{errors.name.message}</p>
+                    <p className="text-xs text-red-500 mt-1 font-sans font-medium">{errors.name.message}</p>
                   )}
                 </div>
 
@@ -312,7 +312,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-email"
-                    className="block text-xs font-mono uppercase tracking-wider text-ink-800 dark:text-zinc-200 mb-1.5"
+                    className="block text-xs font-sans uppercase tracking-[0.16em] font-semibold text-ink-800 dark:text-zinc-200 mb-1.5"
                   >
                     Your Email *
                   </label>
@@ -328,7 +328,7 @@ export default function ContactSection() {
                     }`}
                   />
                   {errors.email && (
-                    <p className="text-xs text-red-500 mt-1 font-mono">{errors.email.message}</p>
+                    <p className="text-xs text-red-500 mt-1 font-sans font-medium">{errors.email.message}</p>
                   )}
                 </div>
 
@@ -336,7 +336,7 @@ export default function ContactSection() {
                 <div ref={dropdownRef} className="relative">
                   <label
                     id="topic-label"
-                    className="block text-xs font-mono uppercase tracking-wider text-ink-800 dark:text-zinc-200 mb-1.5"
+                    className="block text-xs font-sans uppercase tracking-[0.16em] font-semibold text-ink-800 dark:text-zinc-200 mb-1.5"
                   >
                     Topic of Discussion *
                   </label>
@@ -362,7 +362,7 @@ export default function ContactSection() {
                         <div className="font-medium text-ink-900 dark:text-white text-sm truncate">
                           {selectedOption.label}
                         </div>
-                        <div className="text-[11px] font-mono text-ink-muted dark:text-zinc-400 truncate">
+                        <div className="text-xs font-sans text-ink-muted dark:text-zinc-400 truncate">
                           {selectedOption.detail}
                         </div>
                       </div>
@@ -429,7 +429,7 @@ export default function ContactSection() {
                                   <div className="text-sm font-medium leading-snug">
                                     {opt.label}
                                   </div>
-                                  <div className="text-[11px] font-mono text-ink-muted dark:text-zinc-400">
+                                  <div className="text-xs font-sans text-ink-muted dark:text-zinc-400">
                                     {opt.detail}
                                   </div>
                                 </div>
@@ -452,7 +452,7 @@ export default function ContactSection() {
                 <div>
                   <label
                     htmlFor="contact-message"
-                    className="block text-xs font-mono uppercase tracking-wider text-ink-800 dark:text-zinc-200 mb-1.5"
+                    className="block text-xs font-sans uppercase tracking-[0.16em] font-semibold text-ink-800 dark:text-zinc-200 mb-1.5"
                   >
                     Message *
                   </label>
@@ -468,7 +468,7 @@ export default function ContactSection() {
                     }`}
                   />
                   {errors.message && (
-                    <p className="text-xs text-red-500 mt-1 font-mono">{errors.message.message}</p>
+                    <p className="text-xs text-red-500 mt-1 font-sans font-medium">{errors.message.message}</p>
                   )}
                 </div>
 
@@ -483,7 +483,7 @@ export default function ContactSection() {
                       <div>
                         <a
                           href={mailtoLink}
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 dark:bg-emerald-600 text-white text-xs font-mono hover:opacity-90 transition-opacity"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-700 dark:bg-emerald-600 text-white text-xs font-sans font-medium hover:opacity-90 transition-opacity"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
                           <span>Click here if your email app did not open automatically</span>

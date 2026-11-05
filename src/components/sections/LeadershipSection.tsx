@@ -34,7 +34,7 @@ export default function LeadershipSection() {
           number="05"
           pill={LEADERSHIP_CONTENT.sectionLabel}
           title={LEADERSHIP_CONTENT.sectionTitle}
-          subtitle="Mobilizing student advocacy, inclusive art curation, and institutional mental health reform."
+          subtitle="Student governance, community art curation with IBADAT Special School, and school-wide wellbeing initiatives in Amritsar."
         />
 
         <div className="space-y-12 sm:space-y-16">
@@ -43,20 +43,20 @@ export default function LeadershipSection() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-accent-rose dark:text-pink-300 block mb-1 font-semibold">
-                    {ibadat.organization} · {ibadat.role}
+                  <span className="text-xs font-sans uppercase tracking-[0.18em] text-accent-rose dark:text-pink-300 block mb-1 font-semibold">
+                    {ibadat.organization} &middot; {ibadat.role}
                   </span>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-ink-900 dark:text-white">
                     {ibadat.projectTitle}
                   </h3>
                 </div>
 
-                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-relaxed">
+                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75]">
                   {ibadat.description}
                 </p>
 
                 {ibadat.additionalNote && (
-                  <p className="text-xs font-mono text-ink-800 dark:text-zinc-200 p-3 sm:p-4 rounded-xl bg-white/80 dark:bg-[#202028] border border-[#E7E0D2] dark:border-[#2E2E38]">
+                  <p className="text-xs font-sans text-ink-800 dark:text-zinc-200 p-3.5 sm:p-4 rounded-xl bg-white/80 dark:bg-[#202028] border border-[#E7E0D2] dark:border-[#2E2E38] leading-relaxed">
                     {ibadat.additionalNote}
                   </p>
                 )}
@@ -68,7 +68,7 @@ export default function LeadershipSection() {
                       key={i}
                       className="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#2E2E38]"
                     >
-                      <div className="text-[11px] font-mono text-ink-muted dark:text-zinc-400 mb-1">{st.label}</div>
+                      <div className="text-xs font-sans text-ink-muted dark:text-zinc-400 mb-1">{st.label}</div>
                       <div className="text-base sm:text-lg font-serif font-semibold text-accent-rose dark:text-pink-400">
                         {st.value}
                       </div>
@@ -79,9 +79,9 @@ export default function LeadershipSection() {
 
               {/* Workshops Photos */}
               <div className="lg:col-span-5 space-y-3">
-                <div className="flex justify-between items-center text-xs font-mono text-ink-muted dark:text-zinc-400 mb-1">
+                <div className="flex justify-between items-center text-xs font-sans text-ink-muted dark:text-zinc-400 mb-1 font-medium">
                   <span>Art Workshop Documentation</span>
-                  <span className="text-accent-rose text-[11px] font-semibold">Click to inspect</span>
+                  <span className="text-accent-rose text-xs font-semibold">Click to inspect</span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
@@ -101,7 +101,7 @@ export default function LeadershipSection() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="px-3 py-1 rounded-full bg-white text-xs font-mono text-ink-900 flex items-center gap-1">
+                        <span className="px-3 py-1 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1">
                           <Eye className="w-3.5 h-3.5" /> View
                         </span>
                       </div>
@@ -117,18 +117,18 @@ export default function LeadershipSection() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-accent-sage dark:text-emerald-400 block mb-1 font-semibold">
-                    {invictus.organization} · {invictus.gradeOrDate}
+                  <span className="text-xs font-sans uppercase tracking-[0.18em] text-accent-sage dark:text-emerald-400 block mb-1 font-semibold">
+                    {invictus.organization} &middot; {invictus.gradeOrDate}
                   </span>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-ink-900 dark:text-white">
                     {invictus.role}
                   </h3>
-                  <p className="text-sm font-mono text-accent-terracotta dark:text-amber-400 mt-1">
+                  <p className="text-sm font-sans font-medium text-accent-terracotta dark:text-amber-400 mt-1">
                     {invictus.projectTitle}
                   </p>
                 </div>
 
-                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-relaxed">
+                <p className="text-sm sm:text-base text-ink-muted dark:text-zinc-200 leading-[1.75]">
                   {invictus.description}
                 </p>
 
@@ -139,7 +139,7 @@ export default function LeadershipSection() {
                       key={i}
                       className="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-[#202028] border border-[#E2DBCB] dark:border-[#2E2E38]"
                     >
-                      <div className="text-[11px] font-mono text-ink-muted dark:text-zinc-400 mb-1">{st.label}</div>
+                      <div className="text-xs font-sans text-ink-muted dark:text-zinc-400 mb-1">{st.label}</div>
                       <div className="text-base sm:text-lg font-serif font-semibold text-accent-sage dark:text-emerald-400">
                         {st.value}
                       </div>
@@ -150,9 +150,9 @@ export default function LeadershipSection() {
 
               {/* Head Girl Photos */}
               <div className="lg:col-span-5 space-y-3">
-                <div className="flex justify-between items-center text-xs font-mono text-ink-muted dark:text-zinc-400 mb-1">
-                  <span>Student Governance & Advocacy</span>
-                  <span className="text-accent-rose text-[11px] font-semibold">Click to inspect</span>
+                <div className="flex justify-between items-center text-xs font-sans text-ink-muted dark:text-zinc-400 mb-1 font-medium">
+                  <span>Student Governance &amp; Advocacy</span>
+                  <span className="text-accent-rose text-xs font-semibold">Click to inspect</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
@@ -172,7 +172,7 @@ export default function LeadershipSection() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="px-2 py-0.5 rounded-full bg-white text-[10px] font-mono text-ink-900 flex items-center gap-1">
+                        <span className="px-2 py-0.5 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1">
                           <Eye className="w-3 h-3" /> View
                         </span>
                       </div>

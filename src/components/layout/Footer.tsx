@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Col 2: Navigation Links */}
           <div className="md:col-span-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-ink-muted dark:text-zinc-400 mb-4">
+            <h4 className="text-xs font-sans uppercase tracking-[0.18em] font-semibold text-ink-muted dark:text-zinc-400 mb-4">
               Directory
             </h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
@@ -60,7 +60,7 @@ export default function Footer() {
           {/* Col 3: Connect & Top */}
           <div className="md:col-span-3 flex flex-col justify-between">
             <div>
-              <h4 className="text-xs font-mono uppercase tracking-widest text-ink-muted dark:text-zinc-400 mb-4">
+              <h4 className="text-xs font-sans uppercase tracking-[0.18em] font-semibold text-ink-muted dark:text-zinc-400 mb-4">
                 Connect
               </h4>
               <div className="flex flex-col gap-3">
@@ -86,7 +86,7 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="mt-8 self-start inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#DCD6C7] dark:border-[#383844] text-xs font-mono tracking-wider uppercase text-ink-800 dark:text-zinc-200 hover:bg-white dark:hover:bg-[#202028] transition-all"
+              className="mt-8 self-start inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#DCD6C7] dark:border-[#383844] text-xs font-sans font-medium tracking-wide text-ink-800 dark:text-zinc-200 hover:bg-white dark:hover:bg-[#202028] transition-all"
             >
               <ArrowUp className="w-3.5 h-3.5" />
               <span>Back to Top</span>
@@ -97,7 +97,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-muted dark:text-zinc-400">
           <p>© {FOOTER_CONTENT.copyrightYear} Deetya Behl. All rights reserved.</p>
-          <p className="font-mono text-[11px] tracking-wider uppercase">
+          <p className="font-serif italic text-sm text-ink-muted dark:text-zinc-400">
             A Curated Gallery of a Curious Mind
           </p>
         </div>

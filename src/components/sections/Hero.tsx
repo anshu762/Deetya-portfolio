@@ -26,7 +26,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE8DA] dark:bg-[#202027] border border-[#DDD3C2] dark:border-[#2D2D36] text-[11px] sm:text-xs font-mono text-ink-800 dark:text-zinc-200 mb-6 sm:mb-8 max-w-full"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFE8DA] dark:bg-[#202027] border border-[#DDD3C2] dark:border-[#2D2D36] text-xs font-sans font-medium tracking-wide text-ink-800 dark:text-zinc-200 mb-6 sm:mb-8 max-w-full"
         >
           <Award className="w-3.5 h-3.5 text-accent-rose shrink-0" />
           <span className="truncate">{HERO_CONTENT.recognitionBadge}</span>
@@ -40,8 +40,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              <p className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.25em] text-accent-rose mb-2">
-                Psychology Researcher · Founder · Classical Dancer
+              <p className="text-xs sm:text-sm font-sans font-medium uppercase tracking-[0.2em] text-accent-rose mb-3">
+                Psychology Researcher &middot; Founder &middot; Classical Dancer
               </p>
               <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium tracking-tight text-ink-900 dark:text-white leading-[1.05] break-words">
                 {HERO_CONTENT.name}
@@ -53,7 +53,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-sm sm:text-base md:text-lg text-ink-muted dark:text-zinc-200 leading-relaxed max-w-xl font-normal"
+              className="text-sm sm:text-base md:text-lg text-ink-muted dark:text-zinc-200 leading-[1.75] max-w-xl font-normal"
             >
               {HERO_CONTENT.subtitle}
             </motion.p>

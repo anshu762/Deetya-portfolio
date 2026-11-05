@@ -43,8 +43,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "Georgia", "serif"],
-        sans: ["var(--font-jakarta)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "DM Sans", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {

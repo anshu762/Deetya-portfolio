@@ -1,22 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE_METADATA } from "@/data/content";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
 import Preloader from "@/components/layout/Preloader";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-serif",
+  weight: ["400", "500", "600", "700", "800"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -129,7 +130,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${cormorant.variable} ${jakarta.variable} ${mono.variable} font-sans antialiased relative min-h-screen selection:bg-accent-rose selection:text-white`}
+        className={`${playfair.variable} ${dmSans.variable} ${mono.variable} font-sans antialiased relative min-h-screen selection:bg-accent-rose selection:text-white`}
       >
         <div className="fixed inset-0 pointer-events-none z-40 paper-grain" aria-hidden="true" />
         <Preloader />

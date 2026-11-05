@@ -30,7 +30,7 @@ export default function LorSection() {
           number="07"
           pill="Endorsements"
           title="Letters of Recommendation"
-          subtitle="Official institutional commendations from government administrators, public security leadership, and elected ministers."
+          subtitle="Official institutional commendations from the Punjab Police, the Government of Punjab, and regional administration."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -46,10 +46,10 @@ export default function LorSection() {
               <div className="space-y-5 sm:space-y-6">
                 {/* Header: Document badge & date */}
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-mono text-accent-rose dark:text-pink-300 uppercase tracking-wider font-semibold">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-sans text-accent-rose dark:text-pink-300 uppercase tracking-[0.18em] font-semibold">
                     <FileText className="w-3.5 h-3.5" /> Official Commendation
                   </span>
-                  <span className="text-xs font-mono text-ink-muted dark:text-zinc-400">{lor.date}</span>
+                  <span className="text-xs font-sans text-ink-muted dark:text-zinc-400 font-medium">{lor.date}</span>
                 </div>
 
                 {/* Document Thumbnail Preview */}
@@ -66,7 +66,7 @@ export default function LorSection() {
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="px-4 py-2 rounded-full bg-white text-xs font-mono text-ink-900 flex items-center gap-1.5 shadow-md">
+                    <span className="px-4 py-2 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1.5 shadow-md">
                       <Eye className="w-3.5 h-3.5" /> Read Full Letter
                     </span>
                   </div>
@@ -80,7 +80,7 @@ export default function LorSection() {
                 </div>
 
                 {/* Summary */}
-                <p className="text-xs text-ink-muted dark:text-zinc-300 leading-relaxed">
+                <p className="text-xs text-ink-muted dark:text-zinc-300 leading-[1.7]">
                   {lor.summary}
                 </p>
               </div>
@@ -91,8 +91,8 @@ export default function LorSection() {
                   <h4 className="text-sm font-serif font-semibold text-ink-900 dark:text-white">
                     {lor.author}
                   </h4>
-                  <p className="text-[11px] font-mono text-ink-muted dark:text-zinc-300">
-                    {lor.role} · {lor.organization}
+                  <p className="text-xs font-sans text-ink-muted dark:text-zinc-300 mt-0.5">
+                    {lor.role} &middot; {lor.organization}
                   </p>
                 </div>
 
