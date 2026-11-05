@@ -353,7 +353,9 @@ export const LEADERSHIP_CONTENT = {
       gradeOrDate: "Grade 12",
       details: "School-wide student governance & wellbeing advocacy",
       description:
-        "As Head Girl I designed and ran five wellbeing programmes for everyone from grade 1 to grade 12 — and their families. One of them sets up 'art corners' where younger kids can take a quiet drawing break when they're overwhelmed. Counsellor visits went up 31%, which to me means help-seeking stopped being something to hide. I also serve as the school's Tobacco-Free Educational Institution student monitor.",
+        "As Head Girl I designed and ran five wellbeing programmes for everyone from grade 1 to grade 12 — and their families. One of them sets up 'art corners' where younger kids can take a quiet drawing break when they're overwhelmed. Counsellor visits went up 31%, which to me means help-seeking stopped being something to hide.",
+      additionalNote:
+        "Designated Student Monitor for Tobacco-Free Educational Institution (ToFEI) compliance & school-wide student advocacy.",
       keyStats: [
         { label: "Wellbeing programmes", value: "5 Programmes" },
         { label: "Students reached", value: "1,000+ Students" },
