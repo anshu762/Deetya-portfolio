@@ -65,9 +65,9 @@ export default function LorSection() {
                     sizes="(max-width: 1024px) 100vw, 360px"
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="px-4 py-2 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1.5 shadow-md">
-                      <Eye className="w-3.5 h-3.5" /> Read Full Letter
+                  <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                    <span className="px-4 py-2 rounded-full bg-white text-xs font-sans font-semibold text-zinc-950 flex items-center gap-1.5 shadow-md">
+                      <Eye className="w-3.5 h-3.5 text-zinc-950" /> Read Full Letter
                     </span>
                   </div>
                 </div>

@@ -53,20 +53,20 @@
 }
 
 /* Ensure crystal-clear readability and contrast in dark mode */
-.dark .text-ink-muted {
-  color: #CBD5E1 !important;
+.dark .text-ink-muted:not([class*="bg-white"]):not([class*="dark:bg-white"]) {
+  color: #CBD5E1;
 }
-.dark .text-ink-900 {
-  color: #FFFFFF !important;
+.dark .text-ink-900:not([class*="bg-white"]):not([class*="dark:bg-white"]) {
+  color: #FFFFFF;
 }
-.dark .text-ink-800 {
-  color: #F8FAFC !important;
+.dark .text-ink-800:not([class*="bg-white"]):not([class*="dark:bg-white"]) {
+  color: #F8FAFC;
 }
-.dark .text-ink-700 {
-  color: #F1F5F9 !important;
+.dark .text-ink-700:not([class*="bg-white"]):not([class*="dark:bg-white"]) {
+  color: #F1F5F9;
 }
-.dark .text-ink-600 {
-  color: #E2E8F0 !important;
+.dark .text-ink-600:not([class*="bg-white"]):not([class*="dark:bg-white"]) {
+  color: #E2E8F0;
 }
 
 /* Dark mode high-contrast cards and borders */

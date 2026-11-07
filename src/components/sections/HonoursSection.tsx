@@ -63,9 +63,9 @@ export default function HonoursSection() {
                     sizes="(max-width: 1024px) 50vw, 280px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="px-3.5 py-1 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1.5 shadow-sm">
-                      <Eye className="w-3.5 h-3.5" /> View Certificate
+                  <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                    <span className="px-3.5 py-1.5 rounded-full bg-white text-xs font-sans font-semibold text-zinc-950 flex items-center gap-1.5 shadow-md">
+                      <Eye className="w-3.5 h-3.5 text-zinc-950" /> View Certificate
                     </span>
                   </div>
                 </div>
@@ -123,9 +123,9 @@ export default function HonoursSection() {
                   {item.certificateImage && (
                     <button
                       onClick={() => openCertificate(item.certificateImage!)}
-                      className="text-xs font-sans text-accent-terracotta dark:text-amber-400 hover:underline inline-flex items-center gap-1 font-medium"
+                      className="px-2.5 py-1 rounded-full text-xs font-sans font-semibold text-accent-terracotta dark:text-amber-400 hover:bg-accent-terracotta/10 dark:hover:bg-amber-400/10 border border-accent-terracotta/25 dark:border-amber-400/25 inline-flex items-center gap-1 transition-colors cursor-pointer"
                     >
-                      <Eye className="w-3 h-3" /> Certificate
+                      <Eye className="w-3 h-3" /> View Certificate
                     </button>
                   )}
                 </div>

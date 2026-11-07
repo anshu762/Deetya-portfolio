@@ -132,9 +132,9 @@ export default function ResearchSection() {
                         sizes="(max-width: 1024px) 100vw, 450px"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="px-3 py-1.5 rounded-full bg-white/90 text-xs font-mono text-ink-900 flex items-center gap-1.5">
-                          <Eye className="w-3.5 h-3.5" /> Expand
+                      <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                        <span className="px-3.5 py-1.5 rounded-full bg-white text-xs font-sans font-semibold text-zinc-950 flex items-center gap-1.5 shadow-md">
+                          <Eye className="w-3.5 h-3.5 text-zinc-950" /> Expand
                         </span>
                       </div>
                     </motion.div>
@@ -242,11 +242,11 @@ export default function ResearchSection() {
                     sizes="(max-width: 1024px) 100vw, 420px"
                     className="object-contain p-1.5 group-hover:scale-[1.02] transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1.5 p-4 text-center">
-                    <span className="px-3.5 py-1.5 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1.5 shadow-md">
-                      <Eye className="w-3.5 h-3.5" /> View Poster (2 Exhibits)
+                  <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1.5 p-4 text-center">
+                    <span className="px-4 py-2 rounded-full bg-white text-xs font-sans font-semibold text-zinc-950 flex items-center gap-1.5 shadow-md">
+                      <Eye className="w-3.5 h-3.5 text-zinc-950" /> View Poster (2 Exhibits)
                     </span>
-                    <span className="text-[11px] text-white/90 font-sans">
+                    <span className="text-[11px] text-white/95 font-sans font-medium">
                       Click to inspect full resolution
                     </span>
                   </div>

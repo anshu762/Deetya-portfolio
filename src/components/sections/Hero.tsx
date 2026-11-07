@@ -87,7 +87,7 @@ export default function Hero() {
             >
               <button
                 onClick={scrollToWork}
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-ink-900 text-white dark:bg-white dark:text-ink-900 text-xs sm:text-sm font-medium tracking-wide shadow-card hover:opacity-95 transition-all"
+                className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-ink-900 text-white dark:bg-white dark:text-zinc-950 text-xs sm:text-sm font-semibold tracking-wide shadow-card hover:opacity-95 transition-all"
               >
                 <span>Explore the Work</span>
                 <ArrowDown className="w-4 h-4 animate-bounce" />

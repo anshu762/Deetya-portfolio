@@ -505,7 +505,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-ink-900 text-white dark:bg-white dark:text-ink-900 text-xs sm:text-sm font-medium tracking-wide shadow-card hover:opacity-90 disabled:opacity-50 transition-opacity"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-ink-900 text-white dark:bg-white dark:text-zinc-950 text-xs sm:text-sm font-semibold tracking-wide shadow-card hover:opacity-90 disabled:opacity-50 transition-opacity"
                 >
                   <Send className="w-4 h-4" />
                   <span>{isSubmitting ? "Opening Email..." : "Send via Email"}</span>

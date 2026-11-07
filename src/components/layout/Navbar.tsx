@@ -158,7 +158,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => handleLinkClick("#contact")}
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium bg-ink-900 text-white dark:bg-white dark:text-ink-900 hover:opacity-90 transition-opacity cursor-pointer shadow-xs"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-ink-900 text-white dark:bg-white dark:text-zinc-950 hover:opacity-90 transition-opacity cursor-pointer shadow-xs"
           >
             <span>Get in touch</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

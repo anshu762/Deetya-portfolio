@@ -48,9 +48,9 @@ export default function ToolsSection() {
                   sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="px-4 py-2 rounded-full bg-white text-xs font-sans font-medium text-ink-900 flex items-center gap-1.5 shadow-md">
-                    <Eye className="w-3.5 h-3.5" /> View Device Schematic
+                <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3">
+                  <span className="px-4 py-2 rounded-full bg-white text-xs font-sans font-semibold text-zinc-950 flex items-center gap-1.5 shadow-md">
+                    <Eye className="w-3.5 h-3.5 text-zinc-950" /> View Device Schematic
                   </span>
                 </div>
               </div>
